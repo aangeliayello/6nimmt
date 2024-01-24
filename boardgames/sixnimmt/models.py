@@ -1,12 +1,3 @@
-import os
-import django
-
-# Configure the environment for your Django project
-# Replace 'myproject.settings' with your actual project's settings module
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'boardgames.settings')
-django.setup()
-
-
 from django.db import models
 
 class Player(models.Model):
@@ -69,8 +60,8 @@ class Game(models.Model):
     
     boardState = models.ForeignKey(Board, on_delete=models.CASCADE)
     
-    moveHistory = models.ForeignKey(MoveHistory, on_delete=models.CASCADE)
-    
+    currentMoves = models.ManyToManyField(Move)
+    moveHistory = models.ManyToManyField(MoveHistory)
     lastUpdated = models.DateTimeField(auto_now=True)
     
     def __str__(self):
