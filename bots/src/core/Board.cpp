@@ -6,10 +6,11 @@ using namespace std;
 int NUMBER_OF_ROWS = 4;
 int CAPACITY = 6;
 
-Board::Board(vector<vector<Card>> rows){
-    this->rows     = rows;
+Board::Board(){
+    vector<vector<Cards>> rows;
     this->capacity = CAPACITY;
     this->n_rows = NUMBER_OF_ROWS;
+    this->rows     = rows.resize(n_rows);
 };
 
 int Board::cleanRow(const Card& card, int row){
@@ -37,13 +38,13 @@ int Board::addCardToRow(const Card& card, int row){
     return score;
 };
 
-int Boad::getNumberOfRows(){
+int Board::getNumberOfRows(){
     return n_rows;
-}
+};
 
-int Boad::getCapacity() const {
+int Board::getCapacity() const {
     return capacity;
-}
+};
 
 std::string Board::toString() const {
     std::ostringstream oss;
@@ -58,8 +59,8 @@ std::string Board::toString() const {
         oss << "\n";
     }
     return oss.str();
-}
+};
 
 void Board::print() const {
     std::cout << toString();
-}
+};

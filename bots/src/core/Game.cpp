@@ -4,12 +4,11 @@
 int TOTAL_CARDS = 104;
 
 Game::Game() : board(n_rows, capacity) {
-    vector<Card> rows = [];
     vector<Player> players = [];
 
     this->gameStarted = false;
-    this->board = new Board(rows);
-    this->layers = playes;
+    this->board = new Board();
+    this->layers = players;
 }
 
 void Game::addPlayer(Player* player) {
@@ -46,8 +45,8 @@ void Game::distributeCards() {
     }
 }
 
-
-void Game::GetMoves() {
+void Game::app
+void Game::collectMoves() {
     for (auto& player : players) {
         std::unique_ptr<Move> move = player->makeDecision(*this);
         applyMove(*move);
@@ -55,3 +54,4 @@ void Game::GetMoves() {
 
     // TODO: Check if subround needed. 
 }
+

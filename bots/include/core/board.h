@@ -15,7 +15,7 @@ private:
     int n_rows;
 
 public:
-    Board(int rows); 
+    Board(); 
 
     int addCardToRow(const Card& card, int row);
 
