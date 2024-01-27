@@ -1,27 +1,31 @@
-#include "human_engine.h"
-#include "move.h"  // Assuming this includes PlaceCardMove and CleanRowMove
-#include <cstdlib> // For std::rand() and std::srand()
-#include <ctime>   // For std::time()
+#include "../../include/engines/human_engine.h"
+#include "../../include/core/move.h"
+#include "../../include/core/game.h"
+#include "../../include/core/board.h"
+#include "../../include/utils.h"
 #include <iostream>
 
 using namespace std;
 
-HumaneEngine::HumaneEngine() {}
+HumanEngine::HumanEngine() {}
 
-Move* HumaneEngine::makeDecision(const Game& game, const std::vector<Card>& hand) {
+Move* HumanEngine::makeDecision(const Game& game, const std::vector<Card>& hand) {
     cout << "Boad: " << endl;
     Board board = game.getBoard();
+    board.print();
 
-    cout << "Your hand: " << endl;
-    for (const auto& c : hand) {        
-        cout << c.toString() << ', ';
+    if (game.getExpectingCleanRowMove()){
+
+    } else {
+        cout << "Your hand: " << endl;
+        printHand(hand, true);
+        cout << endl;
+
+        int chosenCardIndex;
+        std::cout << "Choose a card to play (index): ";
+        std::cin >> chosenCardIndex;
+
+        // Create and return the move
+        return new PlaceCardMove(hand[chosenCardIndex]);
     }
-    cout << endl << endl;
-
-    int chosenCardIndex;
-    std::cout << "Choose a card to play (index): ";
-    std::cin >> chosenCardIndex;
-
-    // Create and return the move
-    return new PlaceCardMove(hand[chosenCardIndex]);
 }

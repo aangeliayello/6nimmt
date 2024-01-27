@@ -6,6 +6,8 @@
 
 class RandomEngine : public Engine {
 public:
+    RandomEngine();
+
     Move* makeDecision(const Game& game, const std::vector<Card>& hand) override;
 };
 

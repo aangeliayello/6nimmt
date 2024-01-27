@@ -21,10 +21,18 @@ public:
 
     int cleanRow(const Card& card, int row);
 
-    int getNumberOfRows();
+    int getNumberOfRows() const;
+
+    int getCapacity() const;
+
+    int getLowestCardValue() const;
+
+    int findTargetRow(const Card& card) const;
 
     string toString() const;
+
     void print() const;
+
 };
 
 #endif // BOARD_H

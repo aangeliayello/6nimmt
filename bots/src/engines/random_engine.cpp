@@ -1,5 +1,5 @@
-#include "random_engine.h"
-#include "move.h"  // Assuming this includes PlaceCardMove and CleanRowMove
+#include "../../include/engines/random_engine.h"
+#include "../../include/core/move.h"
 #include <cstdlib> // For std::rand() and std::srand()
 #include <ctime>   // For std::time()
 

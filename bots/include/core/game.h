@@ -10,8 +10,10 @@ using namespace std;
 class Game {
 private:
     bool gameStarted;
+    bool expectingCleanRowMove;
     Board board;
-    vector<unique_ptr<Player>> players; // Smart pointers for automatic memory management
+    vector<Player*> players; // Smart pointers for automatic memory management
+    vector<Move*> roundMoves; // Stores moves for the round
 
     void distributeCards();  // Method to distribute cards to players, and initialize the board
 
@@ -27,7 +29,15 @@ public:
 
     void startGame();
 
-    void processRound();
+    void collectMoves();
+
+    void processMoves();
+
+    void printHands(bool printBullHeads = false) const;
+
+    bool getExpectingCleanRowMove() const;
+
+    void setExpectingCleanRowMove(bool expectingCleanRowMoveVal);
 
 };
 

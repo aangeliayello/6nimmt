@@ -14,8 +14,8 @@ private:
 
 public:
     PlaceCardMove(const Card& card) : card(card) {}
-    
-    Card getCard();
+     
+    Card getCard() const;
 };
 
 class CleanRowMove : public Move {
@@ -25,7 +25,7 @@ private:
 public:
     CleanRowMove(const Card& card, int row) : rowToClean(row) {}
     
-    int getRowToClean();
+    int getRowToClean() const;
 };
 
 #endif // MOVE_H

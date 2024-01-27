@@ -3,33 +3,35 @@
 #define PLAYER_H
 
 #include "card.h"
-#include "engines/engine.h"
+#include "../engines/engine.h"
 #include "move.h"
 #include <vector>
 #include <string>
 
+class Game;  // Forward declaration of Game
+
 class Player {
 protected:
     string name;
+    int score;
     vector<Card> hand;
     Engine* engine;
 
 public:
-    Player(string name, Engine* engine) : name(name), engine(engine) {}
-    virtual ~Player() { delete engine; }
+    Player(string name, Engine* engine);
+    virtual ~Player();
 
-    Move* makeDecision(const Game& game) {
-        return engine->makeDecision(game, hand);
-    }
+    Move* makeDecision(const Game& game);
 
-    string getName() const {
-        return name;
-    }
+    int addScore(int incrementScore); 
 
-    void setHand(const vector<Card>& newHand) {
-        hand = newHand;
-    }
+    int getScore() const;
 
+    string getName() const;
+
+    void setHand(const vector<Card>& newHand);
+
+    void printHand(bool printBullHeads = false) const ;
 };
 
 #endif // PLAYER_H

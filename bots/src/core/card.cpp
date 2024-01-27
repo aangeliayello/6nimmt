@@ -1,5 +1,5 @@
 
-#include "card.h"
+#include "../../include/core/card.h"
 
 using namespace std;
 

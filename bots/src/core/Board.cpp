@@ -1,16 +1,16 @@
-#include "board.h"
+#include "../../include/core/board.h"
 #include <vector>
+#include <sstream>
 
 using namespace std;
 
 int NUMBER_OF_ROWS = 4;
 int CAPACITY = 6;
 
-Board::Board(){
-    vector<vector<Cards>> rows;
+Board::Board(){    
     this->capacity = CAPACITY;
-    this->n_rows = NUMBER_OF_ROWS;
-    this->rows     = rows.resize(n_rows);
+    this->n_rows   = NUMBER_OF_ROWS;
+    this->rows.resize(n_rows);
 };
 
 int Board::cleanRow(const Card& card, int row){
@@ -38,7 +38,7 @@ int Board::addCardToRow(const Card& card, int row){
     return score;
 };
 
-int Board::getNumberOfRows(){
+int Board::getNumberOfRows() const{
     return n_rows;
 };
 
@@ -46,14 +46,45 @@ int Board::getCapacity() const {
     return capacity;
 };
 
-std::string Board::toString() const {
-    std::ostringstream oss;
+int Board::getLowestCardValue() const {
+    int lowestCardValue = INT_MAX;
+
+    for (const auto& row : rows) {
+        if (row[0].getNumber() < lowestCardValue){
+            lowestCardValue = row[0].getNumber();
+        }
+    }
+
+    return lowestCardValue;
+}
+
+int Board::findTargetRow(const Card& card) const {
+    int targetRow = -1;
+    int highestLastCardValue = -1;
+
+    for (int i = 0; i < getNumberOfRows(); ++i) {
+        Card lastCardInRow = rows[i].back();
+
+        if (card.getNumber() > lastCardInRow.getNumber()) {
+            // Check if this row has the highest last card value so far
+            if (lastCardInRow.getNumber() > highestLastCardValue) {
+                highestLastCardValue = lastCardInRow.getNumber();
+                targetRow = i;
+            }
+        }
+    }
+
+    return targetRow; // Returns -1 if no suitable row is found
+}
+
+string Board::toString() const {
+    ostringstream oss;
     for (int i = 0; i < n_rows; ++i) {
         oss << "Row " << (i + 1) << ": ";
         for (const auto& card : rows[i]) {
             oss << card.toString();
             if (!rows[i].empty()) {
-                oss <<  << ", "
+                oss << ", ";
             }
         }
         oss << "\n";
@@ -62,5 +93,5 @@ std::string Board::toString() const {
 };
 
 void Board::print() const {
-    std::cout << toString();
+    cout << toString();
 };
