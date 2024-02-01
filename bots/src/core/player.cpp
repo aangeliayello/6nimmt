@@ -14,7 +14,7 @@ Player::~Player() {
     //delete engine; 
 }
 
-Move* Player::makeDecisionPlaceCard(const Game& game) {
+PlaceCardMove* Player::makeDecisionPlaceCard(const Game& game) {
     PlaceCardMove* placeCardMove = engine->makeDecisionPlaceCard(game, hand);
     // Remove car from hand
     removeCardFromHand(placeCardMove->getCard(), hand);
@@ -22,13 +22,8 @@ Move* Player::makeDecisionPlaceCard(const Game& game) {
     return placeCardMove;
 }
 
-Move* Player::makeDecisionCleanRow(const Game& game) {
-    Move * move = engine->makeDecisionCleanRow(game, hand);
-    // Remove car from hand
-    if (auto* placeCardMove = dynamic_cast<PlaceCardMove*>(move)){
-        removeCardFromHand(placeCardMove->getCard(), hand);
-    }
-    return move;
+CleanRowMove* Player::makeDecisionCleanRow(const Game& game) {
+    return engine->makeDecisionCleanRow(game, hand);
 }
 
 string Player::getName() const {

@@ -96,7 +96,7 @@ PlaceCardMove* MCEngine::makeDecisionPlaceCard(const Game& game, const vector<Ca
 
             // We choose the card that we want to simulate
             currGame.clearRoundMoves();
-            Move* myMove = new PlaceCardMove(c);
+            PlaceCardMove* myMove = new PlaceCardMove(c);
             currGame.AddToRoundMoves(myMove);
 
             Player* me = currPlayers[0];
@@ -106,7 +106,7 @@ PlaceCardMove* MCEngine::makeDecisionPlaceCard(const Game& game, const vector<Ca
 
             // Add moves to the game round
             for (int i = 1; i < currPlayers.size(); i++) {
-                Move* move = currPlayers[i]->makeDecision(currGame);
+                PlaceCardMove* move = currPlayers[i]->makeDecisionPlaceCard(currGame);
                 currGame.AddToRoundMoves(move);
             }
             currGame.processMoves(); // Process the round

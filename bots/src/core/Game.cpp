@@ -10,7 +10,6 @@ using namespace std;
 
 Game::Game() {
     this->gameStarted = false;
-    this->expectingCleanRowMove = false;
     this->board = Board();
 }
 
@@ -70,7 +69,7 @@ void Game::distributeCards() {
 void Game::clearRoundMoves() {
     roundMoves.clear();
 }
-void Game::AddToRoundMoves(Move* move){
+void Game::AddToRoundMoves(PlaceCardMove* move){
     roundMoves.push_back(move);
 }
 
@@ -78,7 +77,7 @@ void Game::collectMoves() {
     roundMoves.clear();
 
     for (auto& player : players) {
-        Move* move = player->makeDecision(*this);
+        PlaceCardMove* move = player->makeDecisionPlaceCard(*this);
         roundMoves.push_back(move);
     }
 }
@@ -97,8 +96,7 @@ void Game::processMoves() {
 
     // Pair each move with the corresponding player's index
     for (int i = 0; i < roundMoves.size(); i++) {
-        PlaceCardMove* placeCardMove = static_cast<PlaceCardMove*>(roundMoves[i]);
-        playerMoves.emplace_back(i, placeCardMove);
+        playerMoves.emplace_back(i, roundMoves[i]);
     }
 
     // Sort moves by the card number
@@ -111,36 +109,29 @@ void Game::processMoves() {
     // If the lowest card is lower that the last card of every row, then a CleanRowMove is required
     if (playerMoves[0].move->getCard().getNumber() < lowestCardValue) {
         idxLowestCardPlaced = playerMoves[0].playerIndex;   
-        setExpectingCleanRowMove(true); // Flag to let know to the engine that needs to choose a row
-        Move* cleanMove = players[idxLowestCardPlaced]->makeDecision(*this); // makeDecision understands when to do a CleanRowMove
-        setExpectingCleanRowMove(false);
-        CleanRowMove* cleanRowMove = static_cast<CleanRowMove*>(cleanMove);
+        CleanRowMove* cleanRowMove = players[idxLowestCardPlaced]->makeDecisionCleanRow(*this); // makeDecision understands when to do a CleanRowMove
 
         if (cleanRowMove) {
-            Move* move = roundMoves[idxLowestCardPlaced];
-            PlaceCardMove* placeCardMove = static_cast<PlaceCardMove*>(move);
-            int score = board.cleanRow(placeCardMove->getCard(), cleanRowMove->getRowToClean());;
+            int score = board.cleanRow(roundMoves[idxLowestCardPlaced]->getCard(), cleanRowMove->getRowToClean());;
             players[idxLowestCardPlaced]->addScore(score);
         }
 
-        delete cleanMove; // Clean up the move after processing
+        delete cleanRowMove; // Clean up the move after processing
     }
 
     // Process the rest of the moves
     for (auto playerMove : playerMoves) {
-        Move* move = playerMove.move;
         int idx = playerMove.playerIndex;
         if (idx != idxLowestCardPlaced){
-            PlaceCardMove* placeCardMove = static_cast<PlaceCardMove*>(move);
             // Process PlaceCardMove
-            Card card = placeCardMove->getCard();
+            Card card = playerMove.move->getCard();
             // Find row to add the card to
             int targetRow = board.findTargetRow(card);
             int score = board.addCardToRow(card, targetRow);
             players[idx]->addScore(score);
         }
 
-        delete move; // Clean up the move after processing
+        delete playerMove.move; // Clean up the move after processing
     }
     roundMoves.clear(); // Clear the vector for the next round
 }
@@ -165,14 +156,6 @@ vector<int> Game::getScores() const {
     }
     
     return scores;
-}
-
-bool Game::getExpectingCleanRowMove() const {
-    return expectingCleanRowMove;
-}
-
-void Game::setExpectingCleanRowMove(bool expectingCleanRowMoveVal){
-    expectingCleanRowMove = expectingCleanRowMoveVal;
 }
 
 void Game::runGame(){
