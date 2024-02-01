@@ -29,6 +29,10 @@ public:
 
     int findTargetRow(const Card& card) const;
 
+    vector<int> getBullPerRow() const; 
+
+    vector<vector<Card>> getRows() const; 
+
     string toString() const;
 
     void print() const;

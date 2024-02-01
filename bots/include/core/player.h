@@ -31,6 +31,8 @@ public:
 
     void setHand(const vector<Card>& newHand);
 
+    vector<Card> getHand() const;
+    
     void printHand(bool printBullHeads = false) const ;
 };
 

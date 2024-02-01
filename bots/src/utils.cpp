@@ -1,6 +1,9 @@
 #include "../include/utils.h"
+#include <algorithm>
 
-int calculateBullHeard(int cardValue){
+using namespace std;
+
+int calculateBullHeads(int cardValue){
     if (cardValue == 55){
         return 7;
     } else if (cardValue % 11 == 0){
@@ -17,11 +20,20 @@ int calculateBullHeard(int cardValue){
 
 void printHand(vector<Card> hand, bool printBullHeads){
     for (const auto& card : hand) {
-        std::cout << card.getNumber();
+        cout << card.getNumber();
         if (printBullHeads) {
-            std::cout << " " << card.getBullHeads() << "b";
+            cout << " " << card.getBullHeads() << "b";
         }
-        std::cout << ", ";
+        cout << ", ";
     }
     cout << endl;
+}
+
+void removeCardFromHand(Card card, vector<Card>& hand) {
+    int cardValue = card.getNumber();
+    auto it = find_if(hand.begin(), hand.end(), 
+        [cardValue](Card c) { return c.getNumber() == cardValue; });
+    if (it != hand.end()) {
+        hand.erase(it);
+    }
 }

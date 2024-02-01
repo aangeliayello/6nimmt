@@ -2,10 +2,10 @@
 #define HUMAN_ENGINE_H
 
 #include "engine.h"
-#include <random>
 
 class HumanEngine : public Engine {
 public:
+
     HumanEngine();
 
     Move* makeDecision(const Game& game, const std::vector<Card>& hand) override;

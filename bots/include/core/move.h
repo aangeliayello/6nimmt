@@ -23,7 +23,7 @@ private:
     int rowToClean;
 
 public:
-    CleanRowMove(const Card& card, int row) : rowToClean(row) {}
+    CleanRowMove(int row) : rowToClean(row) {}
     
     int getRowToClean() const;
 };

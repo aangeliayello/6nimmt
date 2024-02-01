@@ -1,2 +1,8 @@
 TODO:
 - remove played card
+
+
+
+
+
+g++ -g -o myGame main.cpp utils.cpp core/board.cpp core/card.cpp core/move.cpp core/game.cpp core/player.cpp engines/human_engine.cpp engines/random_engine.cpp

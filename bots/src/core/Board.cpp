@@ -50,8 +50,8 @@ int Board::getLowestCardValue() const {
     int lowestCardValue = INT_MAX;
 
     for (const auto& row : rows) {
-        if (row[0].getNumber() < lowestCardValue){
-            lowestCardValue = row[0].getNumber();
+        if (row.back().getNumber() < lowestCardValue){
+            lowestCardValue = row.back().getNumber();
         }
     }
 
@@ -76,6 +76,22 @@ int Board::findTargetRow(const Card& card) const {
 
     return targetRow; // Returns -1 if no suitable row is found
 }
+
+vector<int> Board::getBullPerRow() const {
+    int totalBulls = 0;
+    vector<int> bullsPerRow(n_rows, 0);
+    for (int i = 0; i < n_rows; i++){
+        for (auto& c : rows[i]){
+            bullsPerRow[i] += c.getBullHeads();
+        }
+    }
+
+    return bullsPerRow;
+}
+
+vector<vector<Card>> Board::getRows() const {
+    return rows;
+} 
 
 string Board::toString() const {
     ostringstream oss;

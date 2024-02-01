@@ -25,9 +25,21 @@ public:
         return board;
     }
 
+    const vector<Player*>& getPlayers() const {
+        return players;
+    }
+
+    void setBoard(Board boardToSet);
+
     void addPlayer(Player* player);
 
+    void setGameStarted(bool gs);
+
     void startGame();
+    
+    void clearRoundMoves();
+
+    void AddToRoundMoves(Move* move);
 
     void collectMoves();
 
@@ -35,10 +47,15 @@ public:
 
     void printHands(bool printBullHeads = false) const;
 
+    void printScores() const;
+
+    vector<int> getScores() const;
+
     bool getExpectingCleanRowMove() const;
 
     void setExpectingCleanRowMove(bool expectingCleanRowMoveVal);
 
+    void runGame();
 };
 
-#endif // CARD_H
+#endif // GAME_H

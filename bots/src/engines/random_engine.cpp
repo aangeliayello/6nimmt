@@ -1,20 +1,32 @@
 #include "../../include/engines/random_engine.h"
 #include "../../include/core/move.h"
-#include <cstdlib> // For std::rand() and std::srand()
-#include <ctime>   // For std::time()
+#include "../../include/core/game.h"
+#include "../../include/globals.h"
+#include <algorithm>
 
 using namespace std;
 
-RandomEngine::RandomEngine() {
-    // Initialize random seed
-    srand(std::time(nullptr));
-}
+RandomEngine::RandomEngine(bool pickMinBullsRowToClean) {}
 
 Move* RandomEngine::makeDecision(const Game& game, const std::vector<Card>& hand) {
-    // Randomly select a card from the hand
-    int cardIndex = rand() % hand.size();
-    Card chosenCard = hand[cardIndex];
+    if (game.getExpectingCleanRowMove()){
+        if (pickMinBullsRowToClean){ // Smartly choose row to clean
+            vector<int> bullsPerRow = game.getBoard().getBullPerRow();
+            auto minElementIterator = min_element(bullsPerRow.begin(), bullsPerRow.end());
+            int chosenRow = distance(bullsPerRow.begin(), minElementIterator);
+            return new CleanRowMove(chosenRow);
+        } else{ // Choose row to clean at random
+            // Randomly select a card from the hand
+            int n_rows = game.getBoard().getNumberOfRows();
+            int chosenRow = uniform_int_distribution<int>(0, n_rows-1)(rng);
+            return new CleanRowMove(chosenRow);
+        }
+    } else {
+        // Randomly select a card from the hand
+        int cardIndex = uniform_int_distribution<int>(0, hand.size()-1)(rng);
+        Card chosenCard = hand[cardIndex];
 
-    // Create and return the move
-    return new PlaceCardMove(chosenCard);
+        // Create and return the move
+        return new PlaceCardMove(chosenCard);
+    }
 }

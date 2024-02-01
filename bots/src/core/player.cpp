@@ -1,6 +1,8 @@
 #include "../../include/core/player.h"
-#include <string>
 #include "../../include/engines/engine.h"
+#include "../../include/utils.h"
+#include <string>
+#include <algorithm>
 
 using namespace std;
 
@@ -13,7 +15,12 @@ Player::~Player() {
 }
 
 Move* Player::makeDecision(const Game& game) {
-    return engine->makeDecision(game, hand);
+    Move * move = engine->makeDecision(game, hand);
+    // Remove car from hand
+    if (auto* placeCardMove = dynamic_cast<PlaceCardMove*>(move)){
+        removeCardFromHand(placeCardMove->getCard(), hand);
+    }
+    return move;
 }
 
 string Player::getName() const {
@@ -31,6 +38,10 @@ int Player::addScore(int incrementScore) {
 
 int Player::getScore() const {
     return score;
+}
+
+vector<Card> Player::getHand() const {
+    return hand;
 }
 
 void Player::printHand(bool printBullHeads) const {

@@ -10,12 +10,20 @@ using namespace std;
 HumanEngine::HumanEngine() {}
 
 Move* HumanEngine::makeDecision(const Game& game, const std::vector<Card>& hand) {
-    cout << "Boad: " << endl;
+    cout << "Board: " << endl;
     Board board = game.getBoard();
     board.print();
 
     if (game.getExpectingCleanRowMove()){
-
+        cout << "Board: " << endl;
+        Board board = game.getBoard();
+        board.print();
+        cout << "Hands: " << endl;
+        game.printHands();
+        int chosenRow;
+  std::cout << "Choose a row to clean (index): ";
+        std::cin >> chosenRow;
+        return new CleanRowMove(chosenRow);
     } else {
         cout << "Your hand: " << endl;
         printHand(hand, true);

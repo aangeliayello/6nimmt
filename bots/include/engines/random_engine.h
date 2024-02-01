@@ -6,7 +6,9 @@
 
 class RandomEngine : public Engine {
 public:
-    RandomEngine();
+    // Defines whether the bot is truly random or chooses the row with the least bull points in it
+    bool pickMinBullsRowToClean; 
+    RandomEngine(bool pickMinBullsRowToClean = false);
 
     Move* makeDecision(const Game& game, const std::vector<Card>& hand) override;
 };

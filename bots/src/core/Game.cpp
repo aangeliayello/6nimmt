@@ -1,12 +1,10 @@
 #include "../../include/core/game.h"
 #include "../../include/utils.h"
+#include "../../include/globals.h"
 #include <random>
 #include <algorithm>
 #include <vector>
 #include <chrono>
-
-int TOTAL_CARDS = 104;
-int CARDS_IN_HAND = 10;
 
 using namespace std;
 
@@ -23,8 +21,16 @@ Game::~Game() {
     }
 }
 
+void Game::setBoard(Board boardToSet)  {
+    board = boardToSet;
+}
+
 void Game::addPlayer(Player* player) {
     players.emplace_back(player);
+}
+
+void Game::setGameStarted(bool gs){
+    gameStarted = gs;
 }
 
 void Game::startGame() {
@@ -38,12 +44,10 @@ void Game::distributeCards() {
     vector<Card> deck;
     // Assuming Card constructor takes two parameters
     for (int i = 1; i <= TOTAL_CARDS; ++i) {
-        Card card = Card(i, calculateBullHeard(i));
+        Card card = Card(i, calculateBullHeads(i));
         deck.emplace_back(card);
     }
 
-    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
-    auto rng = default_random_engine(seed);
     shuffle(begin(deck), end(deck), rng);
 
     // Distribute initial cards to each row on the board
@@ -63,8 +67,14 @@ void Game::distributeCards() {
     }
 }
 
+void Game::clearRoundMoves() {
+    roundMoves.clear();
+}
+void Game::AddToRoundMoves(Move* move){
+    roundMoves.push_back(move);
+}
+
 void Game::collectMoves() {
-    vector<
     roundMoves.clear();
 
     for (auto& player : players) {
@@ -111,24 +121,24 @@ void Game::processMoves() {
             Move* move = roundMoves[idxLowestCardPlaced];
             auto* placeCardMove = dynamic_cast<PlaceCardMove*>(move);
             int score = board.cleanRow(placeCardMove->getCard(), cleanRowMove->getRowToClean());;
-            // TODO: ignore score for now.
+            players[idxLowestCardPlaced]->addScore(score);
         }
 
         delete cleanMove; // Clean up the move after processing
     }
 
     // Process the rest of the moves
-    for (int i = 0; i < roundMoves.size(); i++) {
-        Move* move = roundMoves[i];
-
-        if (i != idxLowestCardPlaced){ //todo bug
+    for (auto playerMove : playerMoves) {
+        Move* move = playerMove.move;
+        int idx = playerMove.playerIndex;
+        if (idx != idxLowestCardPlaced){
             if (auto* placeCardMove = dynamic_cast<PlaceCardMove*>(move)) {
                 // Process PlaceCardMove
                 Card card = placeCardMove->getCard();
                 // Find row to add the card to
                 int targetRow = board.findTargetRow(card);
                 int score = board.addCardToRow(card, targetRow);
-                // TODO: ignore score for now.
+                players[idx]->addScore(score);
             }
         }
 
@@ -144,10 +154,33 @@ void Game::printHands(bool printBullHeads) const {
     }
 }
 
+void Game::printScores() const {
+    for (auto player : players) {
+        cout << player->getName() << ": " << player->getScore() << endl;
+    }
+}
+
+vector<int> Game::getScores() const {
+    vector<int> scores;
+    for (auto player : players) {
+        scores.push_back(player->getScore());
+    }
+    
+    return scores;
+}
+
 bool Game::getExpectingCleanRowMove() const {
     return expectingCleanRowMove;
 }
 
 void Game::setExpectingCleanRowMove(bool expectingCleanRowMoveVal){
     expectingCleanRowMove = expectingCleanRowMoveVal;
+}
+
+void Game::runGame(){
+    int cards_left = players[0]->getHand().size();
+    for (int i = 0; i < cards_left; i++){
+        collectMoves();
+        processMoves();
+    }
 }
