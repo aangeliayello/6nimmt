@@ -6,22 +6,28 @@
 #include "../include/core/player.h"
 #include "../include/core/card.h"
 #include "../include/globals.h"
-
-std::mt19937 rng; 
+#include <chrono>
 #include <iostream>
 
+std::mt19937 rng; 
+
 int main() {
+    std::cout << "Elapsed time: " << endl;
+
     // Set Random seed
     vector<vector<int>> scoresVector;
     vector<int> wins(4, 0);
+    int K = 100;
+    int n_simul = 100;
+    auto start = std::chrono::high_resolution_clock::now();
 
-    for (int k = 0; k < 1000; k++){
+    for (int k = 0; k < K; k++){
         rng.seed(k);
 
         Game game = Game();    
         // Add players
         // For simplicity, adding two human and two AI players
-        game.addPlayer(new Player("mc", new MCEngine(10000)));
+        game.addPlayer(new Player("mc", new MCEngine(n_simul)));
         game.addPlayer(new Player("random", new RandomEngine(true)));
         game.addPlayer(new Player("random", new RandomEngine(true)));
         game.addPlayer(new Player("random", new RandomEngine(true)));
@@ -29,25 +35,25 @@ int main() {
         // Start the game
         game.startGame();
         for (int i = 0; i< 10; i++){
-            cout << "**** Round " << i << " **************";
-            cout << "**** Board *****" << endl;
+            //1cout << "**** Round " << i << " **************";
+            //1cout << "**** Board *****" << endl;
             Board board = game.getBoard();
-            board.print();
-            cout << "**** Scores *****" << endl;
-            game.printScores();
-            cout << "**** Hand *****" << endl;
-            game.printHands(true);
-            cout << "**** Collection Moves *****" << endl;
+            //1board.print();
+            //1cout << "**** Scores *****" << endl;
+            //1game.printScores();
+            //1cout << "**** Hand *****" << endl;
+            //1game.printHands(true);
+            //1cout << "**** Collection Moves *****" << endl;
             game.collectMoves();
             game.processMoves();
         }
 
-        cout << "**** GAME OVER **************";
-        cout << "**** Board *****" << endl;
+        //1cout << "**** GAME OVER **************";
+        //1cout << "**** Board *****" << endl;
         Board board = game.getBoard();
-        board.print();
-        cout << "**** Scores *****" << endl;
-        game.printScores();
+        //1board.print();
+        //1cout << "**** Scores *****" << endl;
+        //1game.printScores();
         scoresVector.push_back(game.getScores());
 
         int currMin = 9999;
@@ -59,20 +65,24 @@ int main() {
             }
         }
         wins[idxCurrMin] += 1;
-        cout << "Wins: " << endl;
-        for (int w: wins){
-            cout << w << ", ";
-        }
-        cout << endl;
+        //1cout << "Wins: " << endl;
+        //1for (int w: wins){
+        //1    cout << w << ", ";
+        //1}
+        //1cout << endl;
 
-        cout << "Score: " << endl;
-        for (auto v :scoresVector){
-            for (int i: v){
-                cout << i << ", ";
-            }
-            cout << endl;
-        }
+        //1cout << "Score: " << endl;
+        // for (auto v :scoresVector){
+        //     for (int i: v){
+        //         cout << i << ", ";
+        //     }
+        //     cout << endl;
+        // }
     }
+
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = end - start;
+    std::cout << "Elapsed time: " << elapsed.count() << " seconds" << "K:" << K << ", NS: " << n_simul << std::endl;
 }
 
 

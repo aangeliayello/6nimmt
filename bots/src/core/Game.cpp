@@ -97,9 +97,8 @@ void Game::processMoves() {
 
     // Pair each move with the corresponding player's index
     for (int i = 0; i < roundMoves.size(); i++) {
-        if (auto* placeCardMove = dynamic_cast<PlaceCardMove*>(roundMoves[i])) {
-            playerMoves.emplace_back(i, placeCardMove);
-        }
+        PlaceCardMove* placeCardMove = static_cast<PlaceCardMove*>(roundMoves[i]);
+        playerMoves.emplace_back(i, placeCardMove);
     }
 
     // Sort moves by the card number
@@ -115,11 +114,11 @@ void Game::processMoves() {
         setExpectingCleanRowMove(true); // Flag to let know to the engine that needs to choose a row
         Move* cleanMove = players[idxLowestCardPlaced]->makeDecision(*this); // makeDecision understands when to do a CleanRowMove
         setExpectingCleanRowMove(false);
-        auto* cleanRowMove = dynamic_cast<CleanRowMove*>(cleanMove);
+        CleanRowMove* cleanRowMove = static_cast<CleanRowMove*>(cleanMove);
 
         if (cleanRowMove) {
             Move* move = roundMoves[idxLowestCardPlaced];
-            auto* placeCardMove = dynamic_cast<PlaceCardMove*>(move);
+            PlaceCardMove* placeCardMove = static_cast<PlaceCardMove*>(move);
             int score = board.cleanRow(placeCardMove->getCard(), cleanRowMove->getRowToClean());;
             players[idxLowestCardPlaced]->addScore(score);
         }
@@ -132,14 +131,13 @@ void Game::processMoves() {
         Move* move = playerMove.move;
         int idx = playerMove.playerIndex;
         if (idx != idxLowestCardPlaced){
-            if (auto* placeCardMove = dynamic_cast<PlaceCardMove*>(move)) {
-                // Process PlaceCardMove
-                Card card = placeCardMove->getCard();
-                // Find row to add the card to
-                int targetRow = board.findTargetRow(card);
-                int score = board.addCardToRow(card, targetRow);
-                players[idx]->addScore(score);
-            }
+            PlaceCardMove* placeCardMove = static_cast<PlaceCardMove*>(move);
+            // Process PlaceCardMove
+            Card card = placeCardMove->getCard();
+            // Find row to add the card to
+            int targetRow = board.findTargetRow(card);
+            int score = board.addCardToRow(card, targetRow);
+            players[idx]->addScore(score);
         }
 
         delete move; // Clean up the move after processing

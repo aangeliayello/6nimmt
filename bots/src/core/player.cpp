@@ -11,11 +11,19 @@ class Game;  // Forward declaration of Game
 Player::Player(string name, Engine* engine) : name(name), engine(engine), score(0) {}
 
 Player::~Player() { 
-    delete engine; 
+    //delete engine; 
 }
 
-Move* Player::makeDecision(const Game& game) {
-    Move * move = engine->makeDecision(game, hand);
+Move* Player::makeDecisionPlaceCard(const Game& game) {
+    PlaceCardMove* placeCardMove = engine->makeDecisionPlaceCard(game, hand);
+    // Remove car from hand
+    removeCardFromHand(placeCardMove->getCard(), hand);
+    
+    return placeCardMove;
+}
+
+Move* Player::makeDecisionCleanRow(const Game& game) {
+    Move * move = engine->makeDecisionCleanRow(game, hand);
     // Remove car from hand
     if (auto* placeCardMove = dynamic_cast<PlaceCardMove*>(move)){
         removeCardFromHand(placeCardMove->getCard(), hand);

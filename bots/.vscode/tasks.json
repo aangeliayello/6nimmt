@@ -6,6 +6,8 @@
             "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
             "args": [
                 "-fdiagnostics-color=always",
+                //"-fsanitize=address",
+                //"/MDd", // Use /MDd or /MTd to define _DEBUG and allow _CrtDumpMemoryLeaks()
                 "-g",
                 "${workspaceFolder}/src/main.cpp",
                 "${workspaceFolder}/src/utils.cpp",
@@ -25,7 +27,7 @@
                 "cwd": "${fileDirname}"
             },
             "problemMatcher": [
-                "$g++"
+                "$gcc"
             ],
             "group": {
                 "kind": "build",
