@@ -9,7 +9,8 @@ public:
 
     MCEngine(int n_simul = 1000);
 
-    Move* makeDecision(const Game& game, const std::vector<Card>& hand) override;
+    PlaceCardMove* makeDecisionPlaceCard(const Game& game, const std::vector<Card>& hand) override;
+    CleanRowMove* makeDecisionCleanRow(const Game& game, const std::vector<Card>& hand) override;
 };
 
 #endif // MC_ENGINE_H

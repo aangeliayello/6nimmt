@@ -1,5 +1,6 @@
 TODO:
-- remove played card
+- Implement game history
+- Add card of game history to simulation
 
 
 

@@ -11,6 +11,7 @@ Board::Board(){
     this->capacity = CAPACITY;
     this->n_rows   = NUMBER_OF_ROWS;
     this->rows.resize(n_rows);
+    this->cardsCleaned = {};
 };
 
 int Board::cleanRow(const Card& card, int row){
@@ -18,7 +19,7 @@ int Board::cleanRow(const Card& card, int row){
     for (const auto& c : rows[row]) {
         score += c.getBullHeads();
     }
-
+    cardsCleaned.insert(cardsCleaned.end(), rows[row].begin(), rows[row].end());
     rows[row].clear();
     rows[row].push_back(card);
 
@@ -44,6 +45,10 @@ int Board::getNumberOfRows() const{
 
 int Board::getCapacity() const {
     return capacity;
+};
+
+vector<Card> Board::getCardsCleaned() const {
+    return cardsCleaned;
 };
 
 int Board::getLowestCardValue() const {
@@ -78,14 +83,12 @@ int Board::findTargetRow(const Card& card) const {
 }
 
 vector<int> Board::getBullPerRow() const {
-    int totalBulls = 0;
     vector<int> bullsPerRow(n_rows, 0);
     for (int i = 0; i < n_rows; i++){
         for (auto& c : rows[i]){
             bullsPerRow[i] += c.getBullHeads();
         }
     }
-
     return bullsPerRow;
 }
 
