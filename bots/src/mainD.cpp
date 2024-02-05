@@ -14,6 +14,8 @@
 std::mt19937 rng; 
 
 int main(int argc, char* argv[]) {
+    rng.seed(0);
+
     if (argc != 3) {
         std::cerr << "Usage: " << argv[0] << " K n_simul" << std::endl;
         return 1;
@@ -30,21 +32,24 @@ int main(int argc, char* argv[]) {
     auto start = std::chrono::high_resolution_clock::now();
 
     for (int k = 0; k < K; k++){
-        rng.seed(k);
-
         Game game = Game();    
         // Add players
         // For simplicity, adding two human and two AI players
-        game.addPlayer(new Player("mc", new MCEngine(n_simul)));
+        //game.addPlayer(new Player("mc", new MCEngine(n_simul)));
         // game.addPlayer(new Player("mc", new MCTSEngine(n_simul, 0.3*n_simul, 0.5)));
         game.addPlayer(new Player("random", new RandomEngine(true)));
         game.addPlayer(new Player("random", new RandomEngine(true)));
         game.addPlayer(new Player("random", new RandomEngine(true)));
 
         // Start the game
+        // cout << k << ", " << rng << endl;
         game.startGame();
+        // cout << k << ", " << rng << endl;
         game.printHands();
+        game.getBoard().print();
         for (int i = 0; i< 10; i++){
+            // cout << k << "-" << i << ", " << rng << endl;
+
             //1cout << "**** Round " << i << " **************";
             //1cout << "**** Board *****" << endl;
             Board board = game.getBoard();

@@ -21,7 +21,9 @@ public:
     Player(string name, Engine* engine);
     virtual ~Player();
 
-    Move* makeDecision(const Game& game);
+    PlaceCardMove* makeDecisionPlaceCard(const Game& game);
+    
+    CleanRowMove* makeDecisionCleanRow(const Game& game);
 
     int addScore(int incrementScore); 
 

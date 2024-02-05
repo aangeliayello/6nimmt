@@ -10,11 +10,9 @@ using namespace std;
 class Game {
 private:
     bool gameStarted;
-    bool expectingCleanRowMove;
     Board board;
     vector<Player*> players; // Smart pointers for automatic memory management
-    vector<Move*> roundMoves; // Stores moves for the round
-
+    vector<PlaceCardMove*> roundMoves; // Stores moves for the round
     void distributeCards();  // Method to distribute cards to players, and initialize the board
 
 public:
@@ -28,7 +26,7 @@ public:
     const vector<Player*>& getPlayers() const {
         return players;
     }
-
+    
     void setBoard(Board boardToSet);
 
     void addPlayer(Player* player);
@@ -39,7 +37,7 @@ public:
     
     void clearRoundMoves();
 
-    void AddToRoundMoves(Move* move);
+    void AddToRoundMoves(PlaceCardMove* move);
 
     void collectMoves();
 
@@ -50,10 +48,6 @@ public:
     void printScores() const;
 
     vector<int> getScores() const;
-
-    bool getExpectingCleanRowMove() const;
-
-    void setExpectingCleanRowMove(bool expectingCleanRowMoveVal);
 
     void runGame();
 };

@@ -14,37 +14,6 @@ using namespace std;
  
 MCEngine::MCEngine(int n_simul) : n_simul(n_simul) {}
 
-unordered_set<int> getSeenCards(const Game& game, const vector<Card>& hand){
-    unordered_set<int> seenCards = {};
-    // TODO: also add cards in the history
-
-    // Add cards in the board
-    for (auto& row : game.getBoard().getRows()){
-        for (auto& c : row){
-            seenCards.insert(c.getNumber());
-        }
-    }
-
-    // Add cards in the player's hand
-    for (auto& c : hand){
-        seenCards.insert(c.getNumber());
-    }
-
-    return seenCards;
-};
-
-float scoresToLoss(vector<int> scores){
-    // Assuming 0th position is our score
-
-    float loss = scores[0];
-    for (int i = 1; i < scores.size(); i++){
-        loss += -scores[i];
-    }
-
-    return loss/scores.size();
-}
-
-
 PlaceCardMove* MCEngine::makeDecisionPlaceCard(const Game& game, const vector<Card>& hand) {
     Board board = game.getBoard();
     vector<Player*> players = game.getPlayers();

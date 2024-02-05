@@ -11,6 +11,7 @@ using namespace std;
 class Board {
 private:
     vector<vector<Card>> rows;
+    vector<Card> cardsCleaned;
     int capacity;
     int n_rows;
 
@@ -24,6 +25,8 @@ public:
     int getNumberOfRows() const;
 
     int getCapacity() const;
+
+    vector<Card> getCardsCleaned() const;
 
     int getLowestCardValue() const;
 

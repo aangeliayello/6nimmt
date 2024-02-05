@@ -20,6 +20,7 @@
                 "${workspaceFolder}/src/engines/human_engine.cpp",
                 "${workspaceFolder}/src/engines/random_engine.cpp",
                 "${workspaceFolder}/src/engines/mc_engine.cpp",
+                "${workspaceFolder}/src/engines/mcts_engine.cpp",
                 "-o",
                 "${workspaceFolder}/myGame.exe"
             ],

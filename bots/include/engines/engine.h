@@ -12,7 +12,8 @@ class Game;  // Forward declaration of Game
 class Engine {
 public:
     virtual ~Engine() = default;
-    virtual Move* makeDecision(const Game& game, const vector<Card>& hand) = 0;
+    virtual PlaceCardMove* makeDecisionPlaceCard(const Game& game, const vector<Card>& hand) = 0;
+    virtual CleanRowMove* makeDecisionCleanRow(const Game& game, const vector<Card>& hand) = 0;
 };
 
 #endif

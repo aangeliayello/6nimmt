@@ -8,7 +8,8 @@ public:
 
     HumanEngine();
 
-    Move* makeDecision(const Game& game, const std::vector<Card>& hand) override;
+    PlaceCardMove* makeDecisionPlaceCard(const Game& game, const std::vector<Card>& hand) override;
+    CleanRowMove* makeDecisionCleanRow(const Game& game, const std::vector<Card>& hand) override;
 };
 
 #endif // HUMAN_ENGINE_H

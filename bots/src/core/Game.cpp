@@ -128,7 +128,9 @@ void Game::processMoves() {
             // Find row to add the card to
             int targetRow = board.findTargetRow(card);
             int score = board.addCardToRow(card, targetRow);
-            players[idx]->addScore(score);
+            if (score){
+                players[idx]->addScore(score);
+            }
         }
 
         delete playerMove.move; // Clean up the move after processing
