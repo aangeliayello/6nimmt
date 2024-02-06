@@ -23,8 +23,8 @@ CleanRowMove* RandomEngine::makeDecisionCleanRow(const Game& game, const std::ve
         vector<int> bullsPerRow = game.getBoard().getBullPerRow();
         auto minElementIterator = min_element(bullsPerRow.begin(), bullsPerRow.end());
         int chosenRow = distance(bullsPerRow.begin(), minElementIterator);
-        game.getBoard().print();
-        cout << chosenRow << endl;
+        //game.getBoard().print();
+        //cout << chosenRow << endl;
         return new CleanRowMove(chosenRow);
     } else{ // Choose row to clean at random
         // Randomly select a card from the hand
