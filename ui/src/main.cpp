@@ -40,7 +40,7 @@ void updateSelectionIndicator(sf::Sprite& selectionIndicator, sf::RenderWindow& 
         float startYBoard= verticalSpacing*5; //(window.getSize().y - totalGridHeight) / 2;
 
         sf::RectangleShape selectionIndicator(sf::Vector2f(horizontalSpacing,  cardHeight*0.8)); // 5 pixels high
-        selectionIndicator.setFillColor(sf::Color::Yellow); 
+        selectionIndicator.setFillColor(sf::Color::Red); 
 
         // Position the circle in front of the row. Adjust x and y as needed.
         float xPosition = startXBoard- horizontalSpacing*2;
