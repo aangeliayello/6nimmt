@@ -1,3 +1,3 @@
-E:/Documents/_FunAndProfit/6nimmt/ui/build/_deps/sfml-subbuild/CMakeFiles/sfml-populate.dir
-E:/Documents/_FunAndProfit/6nimmt/ui/build/_deps/sfml-subbuild/CMakeFiles/edit_cache.dir
-E:/Documents/_FunAndProfit/6nimmt/ui/build/_deps/sfml-subbuild/CMakeFiles/rebuild_cache.dir
+C:/Users/franc/Documents/_FunAndProfit/6nimmt/ui/build/_deps/sfml-subbuild/CMakeFiles/sfml-populate.dir
+C:/Users/franc/Documents/_FunAndProfit/6nimmt/ui/build/_deps/sfml-subbuild/CMakeFiles/edit_cache.dir
+C:/Users/franc/Documents/_FunAndProfit/6nimmt/ui/build/_deps/sfml-subbuild/CMakeFiles/rebuild_cache.dir

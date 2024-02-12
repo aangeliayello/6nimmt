@@ -43,7 +43,11 @@ int Player::getScore() const {
     return score;
 }
 
-vector<Card> Player::getHand() const {
+const vector<Card>& Player::getHand() const {
+    return hand;
+}
+
+vector<Card>& Player::getHandNonConst() {
     return hand;
 }
 

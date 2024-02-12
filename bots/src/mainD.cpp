@@ -36,8 +36,8 @@ int main(int argc, char* argv[]) {
         // Add players
         // For simplicity, adding two human and two AI players
         //game.addPlayer(new Player("mc", new MCEngine(n_simul)));
-        game.addPlayer(new Player("mc", new MCTSEngine(n_simul, 0.3*n_simul, 0.5)));
-        game.addPlayer(new Player("filip", new HumanEngine()));
+        game.addPlayer(make_unique<Player>("random", new MCEngine(1000)));
+        game.addPlayer(make_unique<Player>("alo", new HumanEngine()));
 
         // Start the game
         // cout << k << ", " << rng << endl;

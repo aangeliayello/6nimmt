@@ -33,8 +33,10 @@ public:
 
     void setHand(const vector<Card>& newHand);
 
-    vector<Card> getHand() const;
-    
+    const vector<Card>& getHand() const;
+
+    vector<Card>& getHandNonConst(); // Non-const version
+
     void printHand(bool printBullHeads = false) const ;
 };
 

@@ -31,11 +31,13 @@ vector<float> simulationBody(int n_simul, vector<Card> cards, Board board, vecto
         for (auto c : cards){
             Game currGame;
             currGame.setBoard(board); // Copy board from current state
-            currGame.addPlayer(new Player("mc", engine));
+            RandomEngine* engine = new RandomEngine(true);
+            currGame.addPlayer(make_unique<Player>("mc", engine));
             for (int i = 1; i < n_players; i++){
-                currGame.addPlayer(new Player("random" + to_string(i), engine));
+                RandomEngine* engine = new RandomEngine(true);
+                currGame.addPlayer(make_unique<Player>("random" + to_string(i), engine));
             }
-            vector<Player*> currPlayers = currGame.getPlayers();
+            const vector<unique_ptr<Player>>& currPlayers = currGame.getPlayers(); 
 
             // Distribute random hands to the other players
             
@@ -52,10 +54,9 @@ vector<float> simulationBody(int n_simul, vector<Card> cards, Board board, vecto
             PlaceCardMove* myMove = new PlaceCardMove(c);
             currGame.AddToRoundMoves(myMove);
 
-            Player* me = currPlayers[0];
             vector<Card> myHand = hand;
             removeCardFromHand(c, myHand); // Remove that card from owr hand
-            me->setHand(myHand);
+            currPlayers[0]->setHand(myHand);
 
             // Add moves to the game round
             for (int i = 1; i < currPlayers.size(); i++) {
@@ -78,67 +79,68 @@ vector<float> simulationBody(int n_simul, vector<Card> cards, Board board, vecto
 }
 
 PlaceCardMove* MCTSEngine::makeDecisionPlaceCard(const Game& game, const vector<Card>& hand) {
-    Board board = game.getBoard();
-    vector<Player*> players = game.getPlayers();
-    int n_players = players.size();
-    int cards_in_hand = hand.size();
-    int n_exploration = ceil(exploration_fraction * cards_in_hand);
-    unordered_set<int> cardsToExclude = getSeenCards(game, hand);
 
-    // Deck of cards without seen cards
-    vector<Card> deck;
-    for (int i = 1; i <= TOTAL_CARDS; ++i) {
-        if (cardsToExclude.find(i) == cardsToExclude.end()) {
-            deck.emplace_back(i, calculateBullHeads(i));
-        }
-    }
+    // Board board = game.getBoard();
+    // const vector<unique_ptr<Player>>& players = game.getPlayers();//
+    // int n_players = players.size();
+    // int cards_in_hand = hand.size();
+    // int n_exploration = ceil(exploration_fraction * cards_in_hand);
+    // unordered_set<int> cardsToExclude = getSeenCards(game, hand);
+
+    // // Deck of cards without seen cards
+    // vector<Card> deck;
+    // for (int i = 1; i <= TOTAL_CARDS; ++i) {
+    //     if (cardsToExclude.find(i) == cardsToExclude.end()) {
+    //         deck.emplace_back(i, calculateBullHeads(i));
+    //     }
+    // }
 
     Card bestCard = hand[0];
-    float bestCardLoss = 999;
-    vector<tuple<int, float>> cardAvgLosses;
+    // float bestCardLoss = 999;
+    // vector<tuple<int, float>> cardAvgLosses;
 
-    RandomEngine* engine = new RandomEngine(true);
-    int cardIdx = 0;
-    // Simulate games for each card in hand to see which one is better
-    vector<float> initCardLosses = simulationBody(n_init_simul, hand, board, deck, engine, n_players, hand);
-    for (int i = 0; i < cards_in_hand; i++){
-        cardAvgLosses.push_back(make_tuple(i, initCardLosses[i]));
-    }
-
-    std::sort(cardAvgLosses.begin(), cardAvgLosses.end(), [](const tuple<int, float>& a, const tuple<int, float>& b) {
-        return get<1>(a) < get<1>(b);
-    });
-
-    // cout << "Init Phase: "<< endl;
-    // for (auto il : cardAvgLosses){
-    //     cout << hand[get<0>(il)].toString() << " " << get<1>(il) << endl;
+    // RandomEngine* engine = new RandomEngine(true);
+    // int cardIdx = 0;
+    // // Simulate games for each card in hand to see which one is better
+    // vector<float> initCardLosses = simulationBody(n_init_simul, hand, board, deck, engine, n_players, hand);
+    // for (int i = 0; i < cards_in_hand; i++){
+    //     cardAvgLosses.push_back(make_tuple(i, initCardLosses[i]));
     // }
-    // cout << endl;
 
-    vector<tuple<int, float>> bestCardsIdxLoss(cardAvgLosses.begin(), cardAvgLosses.begin() + n_exploration);
-    vector<Card> cards;
-    for (auto t : cardAvgLosses){
-        cards.push_back(hand[get<0>(t)]);
-    }
+    // std::sort(cardAvgLosses.begin(), cardAvgLosses.end(), [](const tuple<int, float>& a, const tuple<int, float>& b) {
+    //     return get<1>(a) < get<1>(b);
+    // });
 
-    vector<float> cardLosses = simulationBody(n_simul - n_init_simul, cards, board, deck, engine, n_players, hand);
+    // // cout << "Init Phase: "<< endl;
+    // // for (auto il : cardAvgLosses){
+    // //     cout << hand[get<0>(il)].toString() << " " << get<1>(il) << endl;
+    // // }
+    // // cout << endl;
 
-    float exp_frac = float(n_init_simul)/n_simul;
+    // vector<tuple<int, float>> bestCardsIdxLoss(cardAvgLosses.begin(), cardAvgLosses.begin() + n_exploration);
+    // vector<Card> cards;
+    // for (auto t : cardAvgLosses){
+    //     cards.push_back(hand[get<0>(t)]);
+    // }
 
-    // cout << "Second Phase" << endl;
-    for (int i = 0; i < bestCardsIdxLoss.size(); i++){
-        int idx = get<0>(bestCardsIdxLoss[i]);
-        float initLoss = get<1>(bestCardsIdxLoss[i]);
-        float currLoss = cardLosses[i];
-        float cardLoss = initLoss * exp_frac + currLoss*(1 - exp_frac);
-        // cout << hand[get<0>(bestCardsIdxLoss[i])].toString() << " " << cardLoss << endl;
+    // vector<float> cardLosses = simulationBody(n_simul - n_init_simul, cards, board, deck, engine, n_players, hand);
 
-        // Check if simulated card had a better loss
-        if (cardLoss < bestCardLoss){
-            bestCardLoss = cardLoss;
-            bestCard = cards[i];
-        }
-    }
+    // float exp_frac = float(n_init_simul)/n_simul;
+
+    // // cout << "Second Phase" << endl;
+    // for (int i = 0; i < bestCardsIdxLoss.size(); i++){
+    //     int idx = get<0>(bestCardsIdxLoss[i]);
+    //     float initLoss = get<1>(bestCardsIdxLoss[i]);
+    //     float currLoss = cardLosses[i];
+    //     float cardLoss = initLoss * exp_frac + currLoss*(1 - exp_frac);
+    //     // cout << hand[get<0>(bestCardsIdxLoss[i])].toString() << " " << cardLoss << endl;
+
+    //     // Check if simulated card had a better loss
+    //     if (cardLoss < bestCardLoss){
+    //         bestCardLoss = cardLoss;
+    //         bestCard = cards[i];
+    //     }
+    // }
     // cout << endl;
 
     // Create and return the move

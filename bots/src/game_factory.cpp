@@ -1,74 +1,66 @@
+
+#include "../include/game_factory.h"
 #include "../include/engines/engine.h"
 #include "../include/engines/random_engine.h"
 #include "../include/engines/human_engine.h"
 #include "../include/engines/mc_engine.h"
 #include "../include/engines/mcts_engine.h"
-#include "../include/core/game.h"
-#include "../include/core/player.h"
-#include "../include/core/card.h"
 #include "../include/globals.h"
-#include "../include/utils.h"
 #include <chrono>
-#include <iostream>
 
 std::mt19937 rng; 
 
-Game startGame(int argc, char* argv[]) {
-    rng.seed(123);
+void startGame(Game& game) {
+    rng.seed(std::chrono::system_clock::now().time_since_epoch().count());
 
-    Game game = Game();    
     // Add players
     // For simplicity, adding two human and two AI players
-    game.addPlayer(new Player("alo", new HumanEngine()));
+    int n_simul = 10*10000;
     // game.addPlayer(new Player("mc", new MCTSEngine(n_simul, 0.3*n_simul, 0.5)));
-    game.addPlayer(new Player("random", new RandomEngine(true)));
-    game.addPlayer(new Player("random", new RandomEngine(true)));
-    game.addPlayer(new Player("random", new RandomEngine(true)));
+    // game.addPlayer(make_unique<Player>("random", new RandomEngine(true)));
+    // game.addPlayer(make_unique<Player>("random", new RandomEngine(true)));
+    // game.addPlayer(make_unique<Player>("random", new RandomEngine(true)));
+    game.addPlayer(make_unique<Player>("MC", new MCEngine(n_simul)));
+    game.addPlayer(make_unique<Player>("alo", new HumanEngine()));
 
     // Start the game
     game.startGame();
     game.printHands();
-    for (int i = 0; i< 10; i++){
-        game.collectMoves();
-        game.processMoves();
-    }
+    return;
 }
 
+vector<vector<int>> getBoard(const Game& game){
 
-#include "GameFactory.h"
+    vector<vector<Card>> board = game.getBoard().getRows();
+    vector<vector<int>> boardUi(board.size());
 
-int main() {
-    sf::RenderWindow window(sf::VideoMode(1920, 1080), "Card Game");
-    GameFactory gameFactory;
-
-    // Start a new game with default settings
-    GameSettings settings; // Define settings as needed
-    gameFactory.startGame(settings);
-
-    while (window.isOpen()) {
-        sf::Event event;
-        while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed)
-                window.close();
-            
-            // Handle other events like mouse clicks
-            if (event.type == sf::Event::MouseButtonPressed) {
-                // Determine action based on mouse click
-                PlayerAction action; // Fill in action details
-                gameFactory.processTurn(action);
-            }
+    int rowIdx = 0;
+    for (auto& row : board){
+        for (auto& card : row){
+           boardUi[rowIdx].push_back(card.getNumber());
         }
-
-        // Get the current state of the game
-        GameState gameState = gameFactory.getGameState();
-
-        // Update the UI based on the current game state
-        // ...
-
-        window.clear();
-        // Draw the UI elements
-        window.display();
+        rowIdx++;
     }
 
-    return 0;
+    return boardUi;
+}
+
+vector<int> getHand(const Game& game) {
+
+    // TODO: 
+    // std::transform(hand.begin(), hand.end(), back_inserter(handUi), [](const Card& card) {
+    //     return card.getNumber();
+    // });
+    const vector<unique_ptr<Player>>& players = game.getPlayers(); // Assuming getPlayers returns a reference
+    const Player* humanPlayer = players.back().get();
+    const vector<Card>& hand = humanPlayer->getHand();
+
+    vector<int> handUi(hand.size());
+
+    int rowIdx = 0;
+    for (auto& card : hand){
+        handUi[rowIdx] = card.getNumber();
+        rowIdx++;
+    }
+    return handUi;
 }

@@ -10,7 +10,7 @@ FetchContent_Declare(SFML
     GIT_TAG 2.6.x)
 FetchContent_MakeAvailable(SFML)
 
-add_executable(CMakeSFMLProject src/main.cpp src/card.cpp)
+add_executable(CMakeSFMLProject src/main.cpp src/card_texture.cpp ../bots/src/utils.cpp ../bots/src/game_factory.cpp ../bots/src/globals.cpp ../bots/src/core/board.cpp ../bots/src/core/card.cpp ../bots/src/core/move.cpp ../bots/src/core/game.cpp ../bots/src/core/player.cpp ../bots/src/engines/human_engine.cpp ../bots/src/engines/random_engine.cpp ../bots/src/engines/mc_engine.cpp ../bots/src/engines/mcts_engine.cpp)
 
 target_link_libraries(CMakeSFMLProject PRIVATE sfml-graphics)
 target_compile_features(CMakeSFMLProject PRIVATE cxx_std_17)

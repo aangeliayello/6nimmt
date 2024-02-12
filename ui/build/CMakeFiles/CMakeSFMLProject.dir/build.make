@@ -52,10 +52,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = E:\Documents\_FunAndProfit\6nimmt\ui
+CMAKE_SOURCE_DIR = C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = E:\Documents\_FunAndProfit\6nimmt\ui\build
+CMAKE_BINARY_DIR = C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/CMakeSFMLProject.dir/depend.make
@@ -70,55 +70,259 @@ include CMakeFiles/CMakeSFMLProject.dir/flags.make
 
 CMakeFiles/CMakeSFMLProject.dir/src/main.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/flags.make
 CMakeFiles/CMakeSFMLProject.dir/src/main.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/includes_CXX.rsp
-CMakeFiles/CMakeSFMLProject.dir/src/main.cpp.obj: E:/Documents/_FunAndProfit/6nimmt/ui/src/main.cpp
+CMakeFiles/CMakeSFMLProject.dir/src/main.cpp.obj: C:/Users/franc/Documents/_FunAndProfit/6nimmt/ui/src/main.cpp
 CMakeFiles/CMakeSFMLProject.dir/src/main.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Documents\_FunAndProfit\6nimmt\ui\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CMakeSFMLProject.dir/src/main.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CMakeSFMLProject.dir/src/main.cpp.obj -MF CMakeFiles\CMakeSFMLProject.dir\src\main.cpp.obj.d -o CMakeFiles\CMakeSFMLProject.dir\src\main.cpp.obj -c E:\Documents\_FunAndProfit\6nimmt\ui\src\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CMakeSFMLProject.dir/src/main.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CMakeSFMLProject.dir/src/main.cpp.obj -MF CMakeFiles\CMakeSFMLProject.dir\src\main.cpp.obj.d -o CMakeFiles\CMakeSFMLProject.dir\src\main.cpp.obj -c C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\src\main.cpp
 
 CMakeFiles/CMakeSFMLProject.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CMakeSFMLProject.dir/src/main.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Documents\_FunAndProfit\6nimmt\ui\src\main.cpp > CMakeFiles\CMakeSFMLProject.dir\src\main.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\src\main.cpp > CMakeFiles\CMakeSFMLProject.dir\src\main.cpp.i
 
 CMakeFiles/CMakeSFMLProject.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CMakeSFMLProject.dir/src/main.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Documents\_FunAndProfit\6nimmt\ui\src\main.cpp -o CMakeFiles\CMakeSFMLProject.dir\src\main.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\src\main.cpp -o CMakeFiles\CMakeSFMLProject.dir\src\main.cpp.s
 
-CMakeFiles/CMakeSFMLProject.dir/src/card.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/flags.make
-CMakeFiles/CMakeSFMLProject.dir/src/card.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/includes_CXX.rsp
-CMakeFiles/CMakeSFMLProject.dir/src/card.cpp.obj: E:/Documents/_FunAndProfit/6nimmt/ui/src/card.cpp
-CMakeFiles/CMakeSFMLProject.dir/src/card.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\Documents\_FunAndProfit\6nimmt\ui\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CMakeSFMLProject.dir/src/card.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CMakeSFMLProject.dir/src/card.cpp.obj -MF CMakeFiles\CMakeSFMLProject.dir\src\card.cpp.obj.d -o CMakeFiles\CMakeSFMLProject.dir\src\card.cpp.obj -c E:\Documents\_FunAndProfit\6nimmt\ui\src\card.cpp
+CMakeFiles/CMakeSFMLProject.dir/src/card_texture.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/flags.make
+CMakeFiles/CMakeSFMLProject.dir/src/card_texture.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/includes_CXX.rsp
+CMakeFiles/CMakeSFMLProject.dir/src/card_texture.cpp.obj: C:/Users/franc/Documents/_FunAndProfit/6nimmt/ui/src/card_texture.cpp
+CMakeFiles/CMakeSFMLProject.dir/src/card_texture.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CMakeSFMLProject.dir/src/card_texture.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CMakeSFMLProject.dir/src/card_texture.cpp.obj -MF CMakeFiles\CMakeSFMLProject.dir\src\card_texture.cpp.obj.d -o CMakeFiles\CMakeSFMLProject.dir\src\card_texture.cpp.obj -c C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\src\card_texture.cpp
 
-CMakeFiles/CMakeSFMLProject.dir/src/card.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CMakeSFMLProject.dir/src/card.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Documents\_FunAndProfit\6nimmt\ui\src\card.cpp > CMakeFiles\CMakeSFMLProject.dir\src\card.cpp.i
+CMakeFiles/CMakeSFMLProject.dir/src/card_texture.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CMakeSFMLProject.dir/src/card_texture.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\src\card_texture.cpp > CMakeFiles\CMakeSFMLProject.dir\src\card_texture.cpp.i
 
-CMakeFiles/CMakeSFMLProject.dir/src/card.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CMakeSFMLProject.dir/src/card.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Documents\_FunAndProfit\6nimmt\ui\src\card.cpp -o CMakeFiles\CMakeSFMLProject.dir\src\card.cpp.s
+CMakeFiles/CMakeSFMLProject.dir/src/card_texture.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CMakeSFMLProject.dir/src/card_texture.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\src\card_texture.cpp -o CMakeFiles\CMakeSFMLProject.dir\src\card_texture.cpp.s
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/flags.make
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/includes_CXX.rsp
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp.obj: C:/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp.obj -MF CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\utils.cpp.obj.d -o CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\utils.cpp.obj -c C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\utils.cpp
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\utils.cpp > CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\utils.cpp.i
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\utils.cpp -o CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\utils.cpp.s
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/flags.make
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/includes_CXX.rsp
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp.obj: C:/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp.obj -MF CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\game_factory.cpp.obj.d -o CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\game_factory.cpp.obj -c C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\game_factory.cpp
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\game_factory.cpp > CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\game_factory.cpp.i
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\game_factory.cpp -o CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\game_factory.cpp.s
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/flags.make
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/includes_CXX.rsp
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp.obj: C:/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp.obj -MF CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\globals.cpp.obj.d -o CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\globals.cpp.obj -c C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\globals.cpp
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\globals.cpp > CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\globals.cpp.i
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\globals.cpp -o CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\globals.cpp.s
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/flags.make
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/includes_CXX.rsp
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp.obj: C:/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp.obj -MF CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\board.cpp.obj.d -o CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\board.cpp.obj -c C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\board.cpp
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\board.cpp > CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\board.cpp.i
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\board.cpp -o CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\board.cpp.s
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/flags.make
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/includes_CXX.rsp
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp.obj: C:/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp.obj -MF CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\card.cpp.obj.d -o CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\card.cpp.obj -c C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\card.cpp
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\card.cpp > CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\card.cpp.i
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\card.cpp -o CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\card.cpp.s
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/flags.make
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/includes_CXX.rsp
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp.obj: C:/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp.obj -MF CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\move.cpp.obj.d -o CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\move.cpp.obj -c C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\move.cpp
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\move.cpp > CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\move.cpp.i
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\move.cpp -o CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\move.cpp.s
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/flags.make
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/includes_CXX.rsp
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp.obj: C:/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp.obj -MF CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\game.cpp.obj.d -o CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\game.cpp.obj -c C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\game.cpp
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\game.cpp > CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\game.cpp.i
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\game.cpp -o CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\game.cpp.s
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/flags.make
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/includes_CXX.rsp
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp.obj: C:/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp.obj -MF CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\player.cpp.obj.d -o CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\player.cpp.obj -c C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\player.cpp
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\player.cpp > CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\player.cpp.i
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\player.cpp -o CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\core\player.cpp.s
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/flags.make
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/includes_CXX.rsp
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp.obj: C:/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp.obj -MF CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\human_engine.cpp.obj.d -o CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\human_engine.cpp.obj -c C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\human_engine.cpp
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\human_engine.cpp > CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\human_engine.cpp.i
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\human_engine.cpp -o CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\human_engine.cpp.s
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/flags.make
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/includes_CXX.rsp
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp.obj: C:/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp.obj -MF CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\random_engine.cpp.obj.d -o CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\random_engine.cpp.obj -c C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\random_engine.cpp
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\random_engine.cpp > CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\random_engine.cpp.i
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\random_engine.cpp -o CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\random_engine.cpp.s
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/flags.make
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/includes_CXX.rsp
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp.obj: C:/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp.obj -MF CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\mc_engine.cpp.obj.d -o CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\mc_engine.cpp.obj -c C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\mc_engine.cpp
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\mc_engine.cpp > CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\mc_engine.cpp.i
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\mc_engine.cpp -o CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\mc_engine.cpp.s
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/flags.make
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/includes_CXX.rsp
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp.obj: C:/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp.obj: CMakeFiles/CMakeSFMLProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp.obj"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp.obj -MF CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\mcts_engine.cpp.obj.d -o CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\mcts_engine.cpp.obj -c C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\mcts_engine.cpp
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp.i"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\mcts_engine.cpp > CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\mcts_engine.cpp.i
+
+CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp.s"
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\mcts_engine.cpp -o CMakeFiles\CMakeSFMLProject.dir\C_\Users\franc\Documents\_FunAndProfit\6nimmt\bots\src\engines\mcts_engine.cpp.s
 
 # Object files for target CMakeSFMLProject
 CMakeSFMLProject_OBJECTS = \
 "CMakeFiles/CMakeSFMLProject.dir/src/main.cpp.obj" \
-"CMakeFiles/CMakeSFMLProject.dir/src/card.cpp.obj"
+"CMakeFiles/CMakeSFMLProject.dir/src/card_texture.cpp.obj" \
+"CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp.obj" \
+"CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp.obj" \
+"CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp.obj" \
+"CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp.obj" \
+"CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp.obj" \
+"CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp.obj" \
+"CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp.obj" \
+"CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp.obj" \
+"CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp.obj" \
+"CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp.obj" \
+"CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp.obj" \
+"CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp.obj"
 
 # External object files for target CMakeSFMLProject
 CMakeSFMLProject_EXTERNAL_OBJECTS =
 
 bin/CMakeSFMLProject.exe: CMakeFiles/CMakeSFMLProject.dir/src/main.cpp.obj
-bin/CMakeSFMLProject.exe: CMakeFiles/CMakeSFMLProject.dir/src/card.cpp.obj
+bin/CMakeSFMLProject.exe: CMakeFiles/CMakeSFMLProject.dir/src/card_texture.cpp.obj
+bin/CMakeSFMLProject.exe: CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp.obj
+bin/CMakeSFMLProject.exe: CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp.obj
+bin/CMakeSFMLProject.exe: CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp.obj
+bin/CMakeSFMLProject.exe: CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp.obj
+bin/CMakeSFMLProject.exe: CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp.obj
+bin/CMakeSFMLProject.exe: CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp.obj
+bin/CMakeSFMLProject.exe: CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp.obj
+bin/CMakeSFMLProject.exe: CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp.obj
+bin/CMakeSFMLProject.exe: CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp.obj
+bin/CMakeSFMLProject.exe: CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp.obj
+bin/CMakeSFMLProject.exe: CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp.obj
+bin/CMakeSFMLProject.exe: CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp.obj
 bin/CMakeSFMLProject.exe: CMakeFiles/CMakeSFMLProject.dir/build.make
-bin/CMakeSFMLProject.exe: _deps/sfml-build/lib/libsfml-graphics-s.a
-bin/CMakeSFMLProject.exe: _deps/sfml-build/lib/libsfml-window-s.a
-bin/CMakeSFMLProject.exe: _deps/sfml-build/lib/libsfml-system-s.a
+bin/CMakeSFMLProject.exe: _deps/sfml-build/lib/libsfml-graphics-s-d.a
+bin/CMakeSFMLProject.exe: _deps/sfml-build/lib/libsfml-window-s-d.a
+bin/CMakeSFMLProject.exe: _deps/sfml-build/lib/libsfml-system-s-d.a
 bin/CMakeSFMLProject.exe: _deps/sfml-src/extlibs/libs-mingw/x64/libfreetype.a
 bin/CMakeSFMLProject.exe: CMakeFiles/CMakeSFMLProject.dir/linkLibs.rsp
 bin/CMakeSFMLProject.exe: CMakeFiles/CMakeSFMLProject.dir/objects1.rsp
 bin/CMakeSFMLProject.exe: CMakeFiles/CMakeSFMLProject.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=E:\Documents\_FunAndProfit\6nimmt\ui\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable bin\CMakeSFMLProject.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable bin\CMakeSFMLProject.exe"
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Copy OpenAL DLL"
-	"C:\Program Files\CMake\bin\cmake.exe" -E copy E:/Documents/_FunAndProfit/6nimmt/ui/build/_deps/sfml-src/extlibs/bin/x64/openal32.dll E:/Documents/_FunAndProfit/6nimmt/ui/build/bin
+	"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/Users/franc/Documents/_FunAndProfit/6nimmt/ui/build/_deps/sfml-src/extlibs/bin/x64/openal32.dll C:/Users/franc/Documents/_FunAndProfit/6nimmt/ui/build/bin
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\CMakeSFMLProject.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -130,6 +334,6 @@ CMakeFiles/CMakeSFMLProject.dir/clean:
 .PHONY : CMakeFiles/CMakeSFMLProject.dir/clean
 
 CMakeFiles/CMakeSFMLProject.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" E:\Documents\_FunAndProfit\6nimmt\ui E:\Documents\_FunAndProfit\6nimmt\ui E:\Documents\_FunAndProfit\6nimmt\ui\build E:\Documents\_FunAndProfit\6nimmt\ui\build E:\Documents\_FunAndProfit\6nimmt\ui\build\CMakeFiles\CMakeSFMLProject.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\build C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\build C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\build\CMakeFiles\CMakeSFMLProject.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/CMakeSFMLProject.dir/depend
 

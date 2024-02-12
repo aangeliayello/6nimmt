@@ -9,15 +9,17 @@
 #include <cmath> 
 #include <unordered_set>
 #include <string>
+#include <memory>
+#include <chrono>
 
 using namespace std;
  
 MCEngine::MCEngine(int n_simul) : n_simul(n_simul) {}
 
 PlaceCardMove* MCEngine::makeDecisionPlaceCard(const Game& game, const vector<Card>& hand) {
+    auto start = std::chrono::high_resolution_clock::now();
     Board board = game.getBoard();
-    vector<Player*> players = game.getPlayers();
-    int n_players = players.size();
+    int n_players = game.getNumberOfPlayers();
     int cards_in_hand = hand.size();
     int n = ceil(float(n_simul) / hand.size());
     unordered_set<int> cardsToExclude = getSeenCards(game, hand);
@@ -33,7 +35,6 @@ PlaceCardMove* MCEngine::makeDecisionPlaceCard(const Game& game, const vector<Ca
 
     Card bestCard = hand[0];
     float bestCardLoss = 999;
-    RandomEngine* engine = new RandomEngine(true);
     // Simulate games for each card in hand to see which one is better
     for (auto& c : hand){
         // Vector to keep track of the results from the simulation
@@ -47,12 +48,14 @@ PlaceCardMove* MCEngine::makeDecisionPlaceCard(const Game& game, const vector<Ca
             sample(deck.begin(), deck.end(), back_inserter(shuffledDeck), (n_players - 1) * cards_in_hand, rng);
             // Add players with RandomEngine to simulate game
             
-            currGame.addPlayer(new Player("mc", engine));
-            for (int i = 1; i < players.size(); i++){
-                currGame.addPlayer(new Player("random" + to_string(i), engine));
+            RandomEngine* engine = new RandomEngine(true);
+            currGame.addPlayer(make_unique<Player>("mc", engine));
+            for (int i = 1; i < n_players; i++){
+                RandomEngine* engine = new RandomEngine(true);
+                currGame.addPlayer(make_unique<Player>("random" + to_string(i), engine));
             }
-            vector<Player*> currPlayers = currGame.getPlayers();
-
+            vector<unique_ptr<Player>>& currPlayers = currGame.getPlayersV2();
+            
             // Distribute random hands to the other players
             
             for (int i = 1; i < currPlayers.size(); i++){
@@ -68,7 +71,7 @@ PlaceCardMove* MCEngine::makeDecisionPlaceCard(const Game& game, const vector<Ca
             PlaceCardMove* myMove = new PlaceCardMove(c);
             currGame.AddToRoundMoves(myMove);
 
-            Player* me = currPlayers[0];
+            Player* me = currPlayers.front().get();
             vector<Card> myHand = hand;
             removeCardFromHand(c, myHand); // Remove that card from owr hand
             me->setHand(myHand);
@@ -95,6 +98,11 @@ PlaceCardMove* MCEngine::makeDecisionPlaceCard(const Game& game, const vector<Ca
             bestCard = c;
         }
     }
+
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = end - start;
+    std::cout << "Elapsed time: " << elapsed.count() << " seconds" << "NS: " << n_simul << std::endl;
+
     // Create and return the move
     return new PlaceCardMove(bestCard);
 }

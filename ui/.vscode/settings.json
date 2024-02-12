@@ -1,4 +1,10 @@
 {
+    "cmake.generator": "MinGW Makefiles",
+    "C_Cpp.default.compilerPath": "C:/mingw64/bin/g++.exe",
+    "cmake.configureSettings": {
+        "CMAKE_C_COMPILER": "C:/mingw64/bin/gcc.exe",
+        "CMAKE_CXX_COMPILER": "C:/mingw64/bin/g++.exe"
+    },
     "files.associations": {
         "iostream": "cpp",
         "array": "cpp",
@@ -55,6 +61,18 @@
         "streambuf": "cpp",
         "cinttypes": "cpp",
         "typeinfo": "cpp",
-        "variant": "cpp"
-    }
+        "variant": "cpp",
+        "bitset": "cpp",
+        "cstring": "cpp",
+        "set": "cpp",
+        "unordered_set": "cpp",
+        "fstream": "cpp",
+        "codecvt": "cpp",
+        "condition_variable": "cpp",
+        "mutex": "cpp",
+        "semaphore": "cpp",
+        "stop_token": "cpp",
+        "thread": "cpp"
+    },
+    "cmake.configureOnOpen": true
 }

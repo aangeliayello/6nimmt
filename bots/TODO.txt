@@ -6,4 +6,6 @@ TODO:
 
 
 
-g++ -g -o myGame main.cpp utils.cpp core/board.cpp core/card.cpp core/move.cpp core/game.cpp core/player.cpp engines/human_engine.cpp engines/random_engine.cpp
+g++ -g -o myGame main.cpp utils.cpp globals core/board.cpp core/card.cpp core/move.cpp core/game.cpp core/player.cpp engines/human_engine.cpp engines/random_engine.cpp
+
+../bots/src/utils.cpp ../bots/src/globals.cpp ../bots/src/core/board.cpp ../bots/src/core/card.cpp ../bots/src/core/move.cpp ../bots/src/core/game.cpp ../bots/src/core/player.cpp ../bots/src/engines/human_engine.cpp ../bots/src/engines/random_engine.cpp ../bots/src/engines/mc_engine.cpp ../bots/src/engines/mcts_engine.cpp

@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = E:\Documents\_FunAndProfit\6nimmt\ui
+CMAKE_SOURCE_DIR = C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = E:\Documents\_FunAndProfit\6nimmt\ui\build
+CMAKE_BINARY_DIR = C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -77,7 +77,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool for source..."
-	"C:\Program Files\CMake\bin\cpack.exe" --config ./CPackSourceConfig.cmake E:/Documents/_FunAndProfit/6nimmt/ui/build/CPackSourceConfig.cmake
+	"C:\Program Files\CMake\bin\cpack.exe" --config ./CPackSourceConfig.cmake C:/Users/franc/Documents/_FunAndProfit/6nimmt/ui/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -151,9 +151,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\Documents\_FunAndProfit\6nimmt\ui\build\CMakeFiles E:\Documents\_FunAndProfit\6nimmt\ui\build\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\build\CMakeFiles C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\build\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\Documents\_FunAndProfit\6nimmt\ui\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\franc\Documents\_FunAndProfit\6nimmt\ui\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -271,29 +271,317 @@ sfml-audio/fast:
 	$(MAKE) $(MAKESILENT) -f _deps\sfml-build\src\SFML\Audio\CMakeFiles\sfml-audio.dir\build.make _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/build
 .PHONY : sfml-audio/fast
 
-src/card.obj: src/card.cpp.obj
-.PHONY : src/card.obj
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.obj: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp.obj
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.obj
 
 # target to build an object file
-src/card.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/src/card.cpp.obj
-.PHONY : src/card.cpp.obj
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp.obj
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp.obj
 
-src/card.i: src/card.cpp.i
-.PHONY : src/card.i
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.i: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp.i
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.i
 
 # target to preprocess a source file
-src/card.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/src/card.cpp.i
-.PHONY : src/card.cpp.i
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp.i
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp.i
 
-src/card.s: src/card.cpp.s
-.PHONY : src/card.s
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.s: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp.s
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.s
 
 # target to generate assembly for a file
-src/card.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/src/card.cpp.s
-.PHONY : src/card.cpp.s
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp.s
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.cpp.s
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.obj: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp.obj
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.obj
+
+# target to build an object file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp.obj
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp.obj
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.i: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp.i
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.i
+
+# target to preprocess a source file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp.i
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp.i
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.s: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp.s
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.s
+
+# target to generate assembly for a file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp.s
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.cpp.s
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.obj: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp.obj
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.obj
+
+# target to build an object file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp.obj
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp.obj
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.i: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp.i
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.i
+
+# target to preprocess a source file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp.i
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp.i
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.s: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp.s
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.s
+
+# target to generate assembly for a file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp.s
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.cpp.s
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.obj: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp.obj
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.obj
+
+# target to build an object file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp.obj
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp.obj
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.i: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp.i
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.i
+
+# target to preprocess a source file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp.i
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp.i
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.s: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp.s
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.s
+
+# target to generate assembly for a file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp.s
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.cpp.s
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.obj: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp.obj
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.obj
+
+# target to build an object file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp.obj
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp.obj
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.i: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp.i
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.i
+
+# target to preprocess a source file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp.i
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp.i
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.s: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp.s
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.s
+
+# target to generate assembly for a file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp.s
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.cpp.s
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.obj: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp.obj
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.obj
+
+# target to build an object file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp.obj
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp.obj
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.i: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp.i
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.i
+
+# target to preprocess a source file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp.i
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp.i
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.s: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp.s
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.s
+
+# target to generate assembly for a file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp.s
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.cpp.s
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.obj: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp.obj
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.obj
+
+# target to build an object file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp.obj
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp.obj
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.i: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp.i
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.i
+
+# target to preprocess a source file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp.i
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp.i
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.s: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp.s
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.s
+
+# target to generate assembly for a file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp.s
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.cpp.s
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.obj: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp.obj
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.obj
+
+# target to build an object file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp.obj
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp.obj
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.i: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp.i
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.i
+
+# target to preprocess a source file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp.i
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp.i
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.s: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp.s
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.s
+
+# target to generate assembly for a file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp.s
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.cpp.s
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.obj: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp.obj
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.obj
+
+# target to build an object file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp.obj
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp.obj
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.i: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp.i
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.i
+
+# target to preprocess a source file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp.i
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp.i
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.s: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp.s
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.s
+
+# target to generate assembly for a file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp.s
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.cpp.s
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.obj: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp.obj
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.obj
+
+# target to build an object file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp.obj
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp.obj
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.i: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp.i
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.i
+
+# target to preprocess a source file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp.i
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp.i
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.s: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp.s
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.s
+
+# target to generate assembly for a file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp.s
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.cpp.s
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.obj: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp.obj
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.obj
+
+# target to build an object file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp.obj
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp.obj
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.i: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp.i
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.i
+
+# target to preprocess a source file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp.i
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp.i
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.s: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp.s
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.s
+
+# target to generate assembly for a file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp.s
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.cpp.s
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.obj: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp.obj
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.obj
+
+# target to build an object file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp.obj
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp.obj
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.i: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp.i
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.i
+
+# target to preprocess a source file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp.i
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp.i
+
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.s: C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp.s
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.s
+
+# target to generate assembly for a file
+C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp.s
+.PHONY : C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.cpp.s
+
+src/card_texture.obj: src/card_texture.cpp.obj
+.PHONY : src/card_texture.obj
+
+# target to build an object file
+src/card_texture.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/src/card_texture.cpp.obj
+.PHONY : src/card_texture.cpp.obj
+
+src/card_texture.i: src/card_texture.cpp.i
+.PHONY : src/card_texture.i
+
+# target to preprocess a source file
+src/card_texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/src/card_texture.cpp.i
+.PHONY : src/card_texture.cpp.i
+
+src/card_texture.s: src/card_texture.cpp.s
+.PHONY : src/card_texture.s
+
+# target to generate assembly for a file
+src/card_texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CMakeSFMLProject.dir\build.make CMakeFiles/CMakeSFMLProject.dir/src/card_texture.cpp.s
+.PHONY : src/card_texture.cpp.s
 
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
@@ -340,9 +628,45 @@ help:
 	@echo ... sfml-network
 	@echo ... sfml-system
 	@echo ... sfml-window
-	@echo ... src/card.obj
-	@echo ... src/card.i
-	@echo ... src/card.s
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.obj
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.i
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/board.s
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.obj
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.i
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/card.s
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.obj
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.i
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/game.s
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.obj
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.i
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/move.s
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.obj
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.i
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/core/player.s
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.obj
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.i
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/human_engine.s
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.obj
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.i
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mc_engine.s
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.obj
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.i
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/mcts_engine.s
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.obj
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.i
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/engines/random_engine.s
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.obj
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.i
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/game_factory.s
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.obj
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.i
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/globals.s
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.obj
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.i
+	@echo ... C_/Users/franc/Documents/_FunAndProfit/6nimmt/bots/src/utils.s
+	@echo ... src/card_texture.obj
+	@echo ... src/card_texture.i
+	@echo ... src/card_texture.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
