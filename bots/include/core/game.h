@@ -16,11 +16,12 @@ private:
     vector<unique_ptr<Player>> players; // Smart pointers for automatic memory management
     vector<PlaceCardMove*> roundMoves; // Stores moves for the round
     CleanRowMove* roundCleanRowMove;
-    void distributeCards();  // Method to distribute cards to players, and initialize the board
 
 public:
     Game();
     ~Game() = default;
+    
+    void distributeCards();  // Method to distribute cards to players, and initialize the board
     
     bool getWaitingForInputToPlayCard() const;
 
@@ -53,6 +54,8 @@ public:
     void clearRoundMoves();
 
     void AddToRoundMoves(PlaceCardMove* move);
+
+    const vector<PlaceCardMove*> getRoundMoves() const;
 
     void AddCleanRowMove(CleanRowMove* move);
 

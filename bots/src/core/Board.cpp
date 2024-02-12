@@ -13,6 +13,11 @@ Board::Board(){
     this->rows.resize(n_rows);
     this->cardsCleaned = {};
 };
+ void Board::reset(){
+    rows.clear();
+    rows.resize(n_rows);
+    cardsCleaned = {};
+ }
 
 int Board::cleanRow(const Card& card, int row){
     int score = 0;

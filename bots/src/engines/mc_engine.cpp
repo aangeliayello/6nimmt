@@ -36,16 +36,18 @@ PlaceCardMove* MCEngine::makeDecisionPlaceCard(const Game& game, const vector<Ca
     Card bestCard = hand[0];
     float bestCardLoss = 999;
     // Simulate games for each card in hand to see which one is better
-    for (auto& c : hand){
-        // Vector to keep track of the results from the simulation
-        vector<float> cardLosses;
-
-        for (int simul = 0; simul < n; simul++){
-            // Start simulation of a game
+    vector<float> cardLosses(hand.size(), 0);
+    int cardIdx;
+    for (int simul = 0; simul < n; simul++){
+        // Start simulation of a game
+        shuffledDeck.clear();
+        sample(deck.begin(), deck.end(), back_inserter(shuffledDeck), (n_players - 1) * cards_in_hand, rng);
+        // Add players with RandomEngine to simulate game
+        
+        cardIdx = 0;
+        for (auto c : hand){
             Game currGame;
             currGame.setBoard(board); // Copy board from current state
-            shuffledDeck.clear();
-            sample(deck.begin(), deck.end(), back_inserter(shuffledDeck), (n_players - 1) * cards_in_hand, rng);
             // Add players with RandomEngine to simulate game
             
             RandomEngine* engine = new RandomEngine(true);
@@ -88,16 +90,22 @@ PlaceCardMove* MCEngine::makeDecisionPlaceCard(const Game& game, const vector<Ca
 
             vector<int> currScores = currGame.getScores();
             float currLoss = scoresToLoss(currScores);
-            cardLosses.push_back(currLoss);
+            cardLosses[cardIdx] = cardLosses[cardIdx] + (currLoss - cardLosses[cardIdx])/(simul + 1);
+            cardIdx++;
         }
-        float cardLoss = accumulate(cardLosses.begin(), cardLosses.end(), 0.0) / cardLosses.size();
+    }
 
+    for (int i = 0; i < cardLosses.size(); i++){
+        float cardLoss = cardLosses[i];
         // Check if simulated card had a better loss
         if (cardLoss < bestCardLoss){
             bestCardLoss = cardLoss;
-            bestCard = c;
+            bestCard = hand[i];
         }
     }
+
+    float loss = scoresToLoss(game.getScores());
+    cout << "Curr Loss: " << loss + bestCardLoss << endl;
 
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = end - start;

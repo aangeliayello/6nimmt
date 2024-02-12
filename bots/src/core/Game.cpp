@@ -52,6 +52,7 @@ void Game::distributeCards() {
 
     shuffle(begin(deck), end(deck), rng);
 
+    board.reset();
     // Distribute initial cards to each row on the board
     for (int r = 0; r < board.getNumberOfRows(); r++) {
         board.addCardToRow(deck.back(), r);  // Assuming addRowCard method in Board
@@ -78,6 +79,10 @@ void Game::clearRoundMoves() {
 }
 void Game::AddToRoundMoves(PlaceCardMove* move){
     roundMoves.push_back(move);
+}
+
+const vector<PlaceCardMove*> Game::getRoundMoves() const{
+    return roundMoves;
 }
 
 void Game::AddCleanRowMove(CleanRowMove* newCleanRowMove){

@@ -74,7 +74,38 @@ void updateBoard(std::vector<std::vector<sf::Sprite>>& board, const Game& game, 
     }
 }
 
-void updateSelectionIndicator(sf::Sprite& selectionIndicator, sf::RenderWindow& window, float scaleFactor, float cardHeight, int& selectedRowIndex) {
+void updateShownCards(std::vector<sf::Sprite>& showCards, const Game& game, vector<unique_ptr<CardTexture>>& cards, sf::RenderWindow& window, int cardsPerRow, float scaleFactor, float cardWidth, float cardHeight) {
+    
+    vector<int> cardsToShow = getShownCards(game);
+    setHand(showCards, cardsToShow, cards, scaleFactor);
+
+    // Calculate the total width of all cards and spacing
+    float horizontalSpacing  = HORIZONTAL_SPACING*scaleFactor;
+    float verticalSpacing = VERTICAL_SPACING*scaleFactor;
+    float startXBoard= window.getSize().x - cardsToShow.size()*(cardWidth + horizontalSpacing) - 5*horizontalSpacing; //(window.getSize().x - totalGridWidth) / 2;
+    float startYBoard= verticalSpacing*5; //(window.getSize().y - totalGridHeight) / 2;
+    float x;
+    for (int col = 0; col < cardsToShow.size(); ++col) {
+        x = startXBoard+ col * (cardWidth + horizontalSpacing);
+        showCards[col].setPosition(x, startYBoard);
+    }
+    
+    sf::RectangleShape cardIndicator(sf::Vector2f(cardWidth*0.9,  verticalSpacing*2)); // 5 pixels high
+    cardIndicator.setFillColor(sf::Color::Red); 
+
+    // Position the circle in front of the row. Adjust x and y as needed.
+    float xPosition = x + cardWidth*0.1/2;
+    float yPosition = startYBoard + (cardHeight + verticalSpacing);
+    cardIndicator.setPosition(xPosition, yPosition);
+
+    for (auto& s : showCards){
+        window.draw(s);
+    }
+
+    window.draw(cardIndicator);
+}
+
+void updateSelectionIndicator(sf::Sprite& selectionIndicator, sf::RenderWindow& window, const Board& board, float scaleFactor, float cardWidth, float cardHeight, int& selectedRowIndex) {
 
     if (selectedRowIndex != -1) {
         float horizontalSpacing  = HORIZONTAL_SPACING*scaleFactor;
@@ -83,15 +114,25 @@ void updateSelectionIndicator(sf::Sprite& selectionIndicator, sf::RenderWindow& 
         float startXBoard= horizontalSpacing*5; //(window.getSize().x - totalGridWidth) / 2;
         float startYBoard= verticalSpacing*2; //(window.getSize().y - totalGridHeight) / 2;
 
-        sf::RectangleShape selectionIndicator(sf::Vector2f(horizontalSpacing,  cardHeight*0.8)); // 5 pixels high
-        selectionIndicator.setFillColor(sf::Color::Red); 
+        sf::RectangleShape selectionIndicatorFront(sf::Vector2f(horizontalSpacing*2,  cardHeight*0.8)); // 5 pixels high
+        selectionIndicatorFront.setFillColor(sf::Color::Red); 
 
         // Position the circle in front of the row. Adjust x and y as needed.
-        float xPosition = startXBoard- horizontalSpacing*2;
+        float xPosition = startXBoard - horizontalSpacing*3;
         float yPosition = startYBoard+ selectedRowIndex * (cardHeight + verticalSpacing) + 0.1*cardHeight;
-        selectionIndicator.setPosition(xPosition, yPosition);
+        selectionIndicatorFront.setPosition(xPosition, yPosition);
 
-        window.draw(selectionIndicator);
+        sf::RectangleShape selectionIndicatorEnd(sf::Vector2f(horizontalSpacing*2,  cardHeight*0.8)); // 5 pixels high
+        selectionIndicatorEnd.setFillColor(sf::Color::Red); 
+
+        // Position the circle in front of the row. Adjust x and y as needed.
+        int cardsInRow = board.getRows()[selectedRowIndex].size();
+        xPosition = startXBoard + cardsInRow*(cardWidth + horizontalSpacing) + horizontalSpacing;
+        yPosition = startYBoard+ selectedRowIndex * (cardHeight + verticalSpacing) + 0.1*cardHeight;
+        selectionIndicatorEnd.setPosition(xPosition, yPosition);
+
+        window.draw(selectionIndicatorFront);
+        window.draw(selectionIndicatorEnd);
     }
 }
 
@@ -356,6 +397,7 @@ int main() {
     // #################
     // Hand 
     // #################
+    std::vector<sf::Sprite> shownCards;
     std::vector<sf::Sprite> hand;
     setHand(hand, handValue, cards, scaleFactor);
 
@@ -374,14 +416,6 @@ int main() {
     const int cardsPerRow = 5;
     const int numRows = 4;
     sf::Sprite selectionIndicator;
-
-    // std::vector<std::vector<sf::Sprite>> board(numRows, std::vector<sf::Sprite>(cardsPerRow));
-    // for (int row = 0; row < numRows; row++) {
-    //     for (int col = 0; col < cardsPerRow; col++) {
-    //         board[row][col].setTexture(cards[(10 + col*5 + row + 1)]->getTexture());
-    //         board[row][col].setScale(scaleFactor, scaleFactor);
-    //     }
-    // }
     
     std::vector<std::vector<sf::Sprite>> board;
     setBoard(board, boardValues, cards, scaleFactor);
@@ -441,15 +475,17 @@ int main() {
             }
 
             // Clean row
-            if (waitingForInputToCleanRow && (rowIndexToClean != -1)){
-                game.AddCleanRowMove(new CleanRowMove(rowIndexToClean));
-                rowIndexToClean = -1;
-                game.processMovesWithCleaning();
-                updateBoard(board, game, cards, window, numRows, cardsPerRow, scaleFactor, cardWidth, cardHeight);
-                cout << "Scores: " << endl;
-                game.printScores();
-                waitingForInputToCleanRow = game.getWaitingForInputToCleanRow();
-                waitingForInputToPlayCard = game.getWaitingForInputToPlayCard();
+            if (waitingForInputToCleanRow){
+                if (rowIndexToClean != -1){
+                    game.AddCleanRowMove(new CleanRowMove(rowIndexToClean));
+                    rowIndexToClean = -1;
+                    game.processMovesWithCleaning();
+                    updateBoard(board, game, cards, window, numRows, cardsPerRow, scaleFactor, cardWidth, cardHeight);
+                    cout << "Scores: " << endl;
+                    game.printScores();
+                    waitingForInputToCleanRow = game.getWaitingForInputToCleanRow();
+                    waitingForInputToPlayCard = game.getWaitingForInputToPlayCard();
+                }
             }
 
             if (event.type == sf::Event::Closed)
@@ -465,6 +501,10 @@ int main() {
                     chooseCardMove(selectedCardIndex, cardIndexToPlay);
                     chooseCleanRowMove(selectedRowIndex, rowIndexToClean);
                 }
+
+                if (event.key.code == sf::Keyboard::Space){
+                    game.distributeCards();
+                }  
             }
             if (event.type == sf::Event::MouseButtonPressed) {
                 if (event.mouseButton.button == sf::Mouse::Left) {
@@ -489,9 +529,12 @@ int main() {
                 window.draw(card);
             }
         }
+        if (waitingForInputToCleanRow){
+            updateShownCards(shownCards, game, cards, window, cardsPerRow, scaleFactor, cardWidth, cardHeight);
+        }
         updateExpectedMoveMessage(waitingForInputToPlayCard, waitingForInputToCleanRow, window, font, cardWidth, cardHeight, scaleFactor);
         updateScoreBoard(game.getScores(), game.getPlayers(), window, fontCourier, scaleFactor);
-        updateSelectionIndicator(selectionIndicator,window, scaleFactor, cardHeight, selectedRowIndex);
+        updateSelectionIndicator(selectionIndicator,window, game.getBoard(), scaleFactor, cardWidth, cardHeight, selectedRowIndex);
         window.display();
     }
 

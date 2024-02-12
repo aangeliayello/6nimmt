@@ -12,4 +12,6 @@ vector<vector<int>> getBoard(const Game& game);
 
 vector<int> getHand(const Game& game);
 
+vector<int> getShownCards(const Game& game);
+
 #endif

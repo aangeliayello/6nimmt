@@ -64,3 +64,13 @@ vector<int> getHand(const Game& game) {
     }
     return handUi;
 }
+
+vector<int> getShownCards(const Game& game){
+    vector<int> cardsToShow;
+    vector<PlaceCardMove*> roundMoves = game.getRoundMoves();
+    for (auto& move : roundMoves){
+        cardsToShow.push_back(move->getCard().getNumber());
+    }
+
+    return cardsToShow;
+}

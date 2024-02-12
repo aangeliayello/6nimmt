@@ -17,7 +17,9 @@ private:
 
 public:
     Board(); 
-
+    
+    void reset();
+    
     int addCardToRow(const Card& card, int row);
 
     int cleanRow(const Card& card, int row);
