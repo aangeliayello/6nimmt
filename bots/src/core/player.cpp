@@ -39,6 +39,11 @@ int Player::addScore(int incrementScore) {
     return score;
 }
 
+int Player::resetScore() {
+    score = 0;
+    return score;
+}
+
 int Player::getScore() const {
     return score;
 }

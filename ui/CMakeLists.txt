@@ -8,7 +8,13 @@ include(FetchContent)
 FetchContent_Declare(SFML
     GIT_REPOSITORY https://github.com/SFML/SFML.git
     GIT_TAG 2.6.x)
-FetchContent_MakeAvailable(SFML)
+
+# New code to check if SFML is already fetched
+FetchContent_GetProperties(SFML)
+if(NOT SFML_POPULATED) # Only fetch if SFML hasn't been fetched yet
+    FetchContent_Populate(SFML)
+    add_subdirectory(${sfml_SOURCE_DIR} ${sfml_BINARY_DIR})
+endif()
 
 add_executable(CMakeSFMLProject src/main.cpp src/card_texture.cpp ../bots/src/utils.cpp ../bots/src/game_factory.cpp ../bots/src/globals.cpp ../bots/src/core/board.cpp ../bots/src/core/card.cpp ../bots/src/core/move.cpp ../bots/src/core/game.cpp ../bots/src/core/player.cpp ../bots/src/engines/human_engine.cpp ../bots/src/engines/random_engine.cpp ../bots/src/engines/mc_engine.cpp ../bots/src/engines/mcts_engine.cpp)
 

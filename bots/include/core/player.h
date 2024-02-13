@@ -29,6 +29,8 @@ public:
 
     int getScore() const;
 
+    int resetScore();
+
     string getName() const;
 
     void setHand(const vector<Card>& newHand);

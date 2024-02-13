@@ -352,10 +352,42 @@ vector<int> Game::getScores() const {
     return scores;
 }
 
+void Game::resetScores() const{
+    for (auto& player : players){
+        player->resetScore();
+    }
+}
+
+string Game::getWinner() const{
+    int minScore = 999999;
+    string winner = "";
+    int score;
+    for (const auto& player : players) {
+        score = player->getScore();
+        if (score < minScore){
+            minScore = score;
+            winner = player->getName();
+        } else if (score == minScore){
+            winner += " & " + player->getName();
+        }
+    }
+    return winner;
+}
+
 void Game::runGame(){
     int cards_left = players[0]->getHand().size();
     for (int i = 0; i < cards_left; i++){
         collectMoves();
         processMoves();
     }
+}
+
+void Game::resetGame() {
+    gameStarted = true;
+    waitingForInputToPlayCard = false;
+    waitingForInputToCleanRow = false;
+    resetScores();
+    roundMoves.clear();
+    roundCleanRowMove = nullptr;  
+    distributeCards();
 }

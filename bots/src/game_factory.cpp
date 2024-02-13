@@ -20,8 +20,8 @@ void startGame(Game& game) {
     // game.addPlayer(make_unique<Player>("random", new RandomEngine(true)));
     // game.addPlayer(make_unique<Player>("random", new RandomEngine(true)));
     // game.addPlayer(make_unique<Player>("random", new RandomEngine(true)));
-    game.addPlayer(make_unique<Player>("MC", new MCEngine(n_simul)));
-    game.addPlayer(make_unique<Player>("alo", new HumanEngine()));
+    game.addPlayer(make_unique<Player>("Bot", new MCEngine(n_simul)));
+    game.addPlayer(make_unique<Player>("Phoebe", new HumanEngine()));
 
     // Start the game
     game.startGame();

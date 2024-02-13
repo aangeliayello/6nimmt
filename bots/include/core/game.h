@@ -79,7 +79,13 @@ public:
 
     vector<int> getScores() const;
 
+    void resetScores() const;
+
+    string getWinner() const;
+
     void runGame();
+
+    void resetGame();
 };
 
 #endif // GAME_H
