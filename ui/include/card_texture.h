@@ -2,7 +2,6 @@
 #define CARD_TEXTURE_H
 
 #include <SFML/Graphics.hpp>
-#include <iostream>
 
 class CardTexture{
     public:

@@ -1,3 +1,6 @@
+#ifndef GLOBALS_H
+#define GLOBALS_H
+
 #include <string>
  
 // Constants
@@ -9,3 +12,5 @@ extern const float HORIZONTAL_SPACING; // Space between cards horizontally
 extern const float VERTICAL_SPACING; 
 
 extern const std::string BASE_DIR;
+
+#endif

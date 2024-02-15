@@ -308,7 +308,7 @@ void Game::processMovesWithCleaning(){
         delete roundCleanRowMove; // Clean up the move after processing
         waitingForInputToCleanRow = false;
     } else{
-        throw std::runtime_error("Expecting at least one card to be lower than the minimum anker card");
+        throw std::runtime_error("Expecting at least one card to be lower than the minimum anchor card");
     }
 
     // Process the rest of the moves
