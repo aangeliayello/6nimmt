@@ -2,13 +2,13 @@
 #include <memory>
 
 #include "../include/globals.h"
+#include "../include/assets.h"
 #include "../include/card_texture.h"
 #include "../../bots/include/core/game.h"
 #include "../../bots/include/game_factory.h"
 
 // Global variables
 float SCALE_FACTOR;
-
 
 void setHand(vector<sf::Sprite>& hand, vector<int>& handValue, vector<unique_ptr<CardTexture>>& cards) {
     hand.clear();
@@ -446,23 +446,16 @@ void chooseCleanRowMove(int& selectedRowIndex, int& rowIndexToClean){
 
 
 int main() {
-
-    sf::Font font;
-    if (!font.loadFromFile("C:/Users/franc/Documents/_FunAndProfit/6nimmt/ui/ca/PressStart2P-Regular.ttf")) {
-        return EXIT_FAILURE;
-    }
-
-    sf::Font fontCourier;
-    if (!fontCourier.loadFromFile("C:/Users/franc/Documents/_FunAndProfit/6nimmt/ui/ca/cour.ttf")) {
-        return EXIT_FAILURE;
-    }
+    
+    
+    sf::Font titleFont = loadTitleFont();
+    sf::Font textFont = loadTextFont();
 
     sf::VideoMode desktop = sf::VideoMode::getDesktopMode();
     unsigned int screenWidth = desktop.width;
     unsigned int screenHeight = desktop.height;
     sf::RenderWindow window(sf::VideoMode(screenWidth*0.4, screenHeight*0.4), "Zugma");
-    sf::Image icon;
-    icon.loadFromFile("C:/Users/franc/Documents/_FunAndProfit/6nimmt/ui/cards/icon.png"); // File/Image/Pixel
+    sf::Image icon = loadIcon();
     window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
     // Calculate scaling factors based on the screen size versus some base size
     float currentWidth = window.getSize().x;
@@ -481,11 +474,7 @@ int main() {
     sf::Vector2f originalPosition;
 
 
-    sf::Texture backgroundTexture;
-    if (!backgroundTexture.loadFromFile("C:/Users/franc/Documents/_FunAndProfit/6nimmt/ui/cards/filomena_1 - Copy.jpg")) {
-        // Error handling
-        return -1; // Or handle the error as you see fit
-    }
+    sf::Texture backgroundTexture = loadBackgroundTexture();
     sf::Sprite backgroundSprite;
     backgroundSprite.setTexture(backgroundTexture);
 
@@ -513,7 +502,7 @@ int main() {
     updateHandPositions(hand, game, cards, window, cardWidth, cardHeight);
 
     // #############
-    // Boad
+    // Board
     // #############
     const int cardsPerRow = 5;
     const int numRows = 4;
@@ -590,9 +579,8 @@ int main() {
                 game.inputCardToPlay(cardIndexToPlay);
                 updateHandPositions(hand, game, cards, window, cardWidth, cardHeight);
 
-                // Show players cards TODO
-                bool todo = game.checkIfInputToCleanRowNeeded();
-                if (!todo){
+                bool cleanRowInputNeed = game.checkIfInputToCleanRowNeeded();
+                if (!cleanRowInputNeed){
                     game.processMoves();
                     updateBoard(board, game, cards, window, numRows, cardsPerRow, cardWidth, cardHeight);
                 } 
@@ -659,6 +647,7 @@ int main() {
         }
 
         window.clear();
+
         window.draw(backgroundSprite);
 
         int cardIdx = 0;
@@ -682,13 +671,13 @@ int main() {
             }
         }
         if (waitingForInputToCleanRow){
-            updateShownCards(shownCards, game, cards, window, cardsPerRow, cardWidth, cardHeight, font);
+            updateShownCards(shownCards, game, cards, window, cardsPerRow, cardWidth, cardHeight, titleFont);
         }
-        updateExpectedMoveMessage(waitingForInputToPlayCard, waitingForInputToCleanRow, window, font, cardWidth, cardHeight);
-        updateScoreBoard(game.getScores(), game.getPlayers(), window, fontCourier);
+        updateExpectedMoveMessage(waitingForInputToPlayCard, waitingForInputToCleanRow, window, titleFont, cardWidth, cardHeight);
+        updateScoreBoard(game.getScores(), game.getPlayers(), window, textFont);
         updateSelectionIndicator(selectionIndicator,window, game.getBoard(), cardWidth, cardHeight, selectedRowIndex);
         if (gameOver){
-            updateGameOverMsg(game.getWinner(), window, font);
+            updateGameOverMsg(game.getWinner(), window, titleFont);
         }
         window.display();
     }
