@@ -1,17 +1,14 @@
 #include <SFML/Graphics.hpp>
 #include <memory>
+
+#include "../include/globals.h"
 #include "../include/card_texture.h"
 #include "../../bots/include/core/game.h"
 #include "../../bots/include/game_factory.h"
 
-// Constants
-float BASE_WIDTH = 1920.0f; // Assume this is your game's designed resolution width
-float BASE_HEIGHT = 1200.0f; // And this is the height
+// Global variables
 float SCALE_FACTOR;
 
-const float MOVE_MOUSE_UPSET = 15.f; // Pixels to move the card up
-const float HORIZONTAL_SPACING = 20.f; // Space between cards horizontally
-const float VERTICAL_SPACING = 15.f; 
 
 void setHand(vector<sf::Sprite>& hand, vector<int>& handValue, vector<unique_ptr<CardTexture>>& cards) {
     hand.clear();
