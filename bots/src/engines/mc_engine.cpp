@@ -168,7 +168,6 @@ CleanRowMove* MCEngine::makeDecisionCleanRow(const Game& game, const vector<Card
                 for (auto rm : game.getRoundMoves()){
                     currGame.AddToRoundMoves(new PlaceCardMove(rm->getCard()));
                 }
-                currGame.processMovesWithCleaning();
                 RandomEngine* engine = new RandomEngine(true);
                 currGame.addPlayer(make_unique<Player>("mc", engine));
                 for (int i = 1; i < n_players; i++){
@@ -184,6 +183,7 @@ CleanRowMove* MCEngine::makeDecisionCleanRow(const Game& game, const vector<Card
                     currPlayers[i]->setHand(tempHand);
                 }
                 currGame.setGameStarted(true);
+                currGame.processMovesWithCleaning();
 
                 // First round of car collection / processing
 

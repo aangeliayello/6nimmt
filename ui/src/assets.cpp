@@ -1,6 +1,6 @@
 #include "../include/assets.h"
 #include <stdexcept> 
-#include "../include/globas.h"
+#include "../include/globals.h"
 
 sf::Texture loadBackgroundTexture(){
     sf::Texture backgroundTexture;
