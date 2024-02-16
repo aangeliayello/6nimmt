@@ -3,13 +3,16 @@
 #include "../include/globals.h"
 #include "../include/assets.h"
 #include "../../bots/include/game_factory.h"
+#include "../../bots/include/globals.h"
 
 GraphicsHandler::GraphicsHandler(sf::RenderWindow& window_, const Game& game) : window(window_) {
     sf::Image icon = loadIcon();
     window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
     
     // Card Textures
-    for (int i = 0; i < 104; ++i) { // TODO: pull 104 from globals
+    if (TOTAL_CARDS > 104) throw std::runtime_error("TOTAL_CARDS exceeded the maximum of 104 cards.");
+    
+    for (int i = 0; i < TOTAL_CARDS; ++i) {
         this->cardTextures.push_back(std::make_unique<CardTexture>(i+1));
     }
 
@@ -196,7 +199,7 @@ void GraphicsHandler::updateSelectionIndicator(int& selectedRowIndex, const Boar
     if (selectedRowIndex != -1) {
         float horizontalSpacing  = HORIZONTAL_SPACING*scaleFactor;
         float verticalSpacing = VERTICAL_SPACING*scaleFactor;
-        
+
         // Calculate the total width of all cards and spacing
         float startXBoard= horizontalSpacing*2; 
         float startYBoard= verticalSpacing*2; 

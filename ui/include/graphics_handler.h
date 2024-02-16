@@ -41,7 +41,7 @@ private:
     sf::Sprite selectionIndicatorSprite;
     sf::Sprite backgroundSprite;
 
-    std::vector<std::unique_ptr<CardTexture>> cardTextures; //TODO: This should be a const
+    std::vector<std::unique_ptr<CardTexture>> cardTextures;
     sf::Font titleFont;
     sf::Font textFont;
 
