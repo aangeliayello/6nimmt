@@ -16,7 +16,7 @@ if(NOT SFML_POPULATED) # Only fetch if SFML hasn't been fetched yet
     add_subdirectory(${sfml_SOURCE_DIR} ${sfml_BINARY_DIR})
 endif()
 
-add_executable(SechtNimmt src/main.cpp src/globals.cpp src/assets.cpp src/graphics_handler.cpp src/card_texture.cpp ../bots/src/utils.cpp ../bots/src/game_factory.cpp ../bots/src/globals.cpp ../bots/src/core/board.cpp ../bots/src/core/card.cpp ../bots/src/core/move.cpp ../bots/src/core/game.cpp ../bots/src/core/player.cpp ../bots/src/engines/human_engine.cpp ../bots/src/engines/random_engine.cpp ../bots/src/engines/mc_engine.cpp ../bots/src/engines/mcts_engine.cpp)
+add_executable(SechtNimmt src/main.cpp src/globals.cpp src/assets.cpp src/graphics_handler.cpp src/click_handler.cpp src/card_texture.cpp ../bots/src/utils.cpp ../bots/src/game_factory.cpp ../bots/src/globals.cpp ../bots/src/core/board.cpp ../bots/src/core/card.cpp ../bots/src/core/move.cpp ../bots/src/core/game.cpp ../bots/src/core/player.cpp ../bots/src/engines/human_engine.cpp ../bots/src/engines/random_engine.cpp ../bots/src/engines/mc_engine.cpp ../bots/src/engines/mcts_engine.cpp)
 
 target_link_libraries(SechtNimmt PRIVATE sfml-graphics)
 target_compile_features(SechtNimmt PRIVATE cxx_std_17)

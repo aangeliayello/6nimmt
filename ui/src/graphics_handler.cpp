@@ -194,7 +194,7 @@ void GraphicsHandler::updateShownCards(const Game& game) {
     window.draw(text);
 }
 
-void GraphicsHandler::updateSelectionIndicator(int& selectedRowIndex, const Board& board) {
+void GraphicsHandler::updateSelectionIndicator(const int selectedRowIndex, const Board& board) {
 
     if (selectedRowIndex != -1) {
         float horizontalSpacing  = HORIZONTAL_SPACING*scaleFactor;
@@ -407,6 +407,10 @@ bool GraphicsHandler::handleCardSelection(int& selectedCardIndex) {
 }
 
 const std::vector<sf::Sprite>& GraphicsHandler::getHandSprites() const {
+    return handSprites;
+}
+
+std::vector<sf::Sprite>& GraphicsHandler::getHandSpritesRef() {
     return handSprites;
 }
 

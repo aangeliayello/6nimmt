@@ -19,12 +19,13 @@ public:
     void updateHandSprites(const Game& game);
     void updateBoardSprites(const Game& game);
     void updateShownCards(const Game& game);
-    void updateSelectionIndicator(int& selectedRowIndex, const Board& board);
+    void updateSelectionIndicator(const int selectedRowIndex, const Board& board);
     void updateScoreBoard(const std::vector<int>& scores, const std::vector<std::unique_ptr<Player>>& players);
     void updateExpectedMoveMessage(bool waitingForInputToPlayCard, bool waitingForInputToCleanRow);
     void updateGameOverMsg(const std::string& winner);
 
     const std::vector<sf::Sprite>& getHandSprites() const;
+    std::vector<sf::Sprite>& getHandSpritesRef();
     const std::vector<vector<sf::Sprite>>& getBoardSprites() const;
     const sf::Sprite& getBackgroundSprite() const;
 
