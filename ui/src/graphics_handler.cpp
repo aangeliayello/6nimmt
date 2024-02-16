@@ -196,12 +196,13 @@ void GraphicsHandler::updateSelectionIndicator(int& selectedRowIndex, const Boar
     if (selectedRowIndex != -1) {
         float horizontalSpacing  = HORIZONTAL_SPACING*scaleFactor;
         float verticalSpacing = VERTICAL_SPACING*scaleFactor;
+        
         // Calculate the total width of all cards and spacing
-        float startXBoard= horizontalSpacing*2; //(window.getSize().x - totalGridWidth) / 2;
-        float startYBoard= verticalSpacing*2; //(window.getSize().y - totalGridHeight) / 2;
+        float startXBoard= horizontalSpacing*2; 
+        float startYBoard= verticalSpacing*2; 
 
-        // TODO: rectangles width looks off
-        sf::RectangleShape selectionIndicatorFront(sf::Vector2f(horizontalSpacing/2,  cardHeight*0.8)); // 5 pixels high
+        sf::Vector2f rectSize( int(horizontalSpacing/2),  int(cardHeight*0.8));
+        sf::RectangleShape selectionIndicatorFront(rectSize);
         selectionIndicatorFront.setFillColor(sf::Color::Red); 
 
         // Position the circle in front of the row. Adjust x and y as needed.
@@ -209,7 +210,7 @@ void GraphicsHandler::updateSelectionIndicator(int& selectedRowIndex, const Boar
         float yPosition = startYBoard+ selectedRowIndex * (cardHeight + verticalSpacing) + 0.1*cardHeight;
         selectionIndicatorFront.setPosition(xPosition, yPosition);
 
-        sf::RectangleShape selectionIndicatorEnd(sf::Vector2f(horizontalSpacing/2,  cardHeight*0.8)); // 5 pixels high
+        sf::RectangleShape selectionIndicatorEnd(rectSize);
         selectionIndicatorEnd.setFillColor(sf::Color::Red); 
 
         // Position the circle in front of the row. Adjust x and y as needed.
