@@ -30,7 +30,7 @@ public:
     const sf::Sprite& getBackgroundSprite() const;
 
     bool handleCardSelection(int& selectedCardIndex);
-
+    void handleResizeEvent(float newWindowWidth, float newWindowHeight);
 private:
     sf::RenderWindow& window;
 

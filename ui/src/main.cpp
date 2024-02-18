@@ -31,8 +31,7 @@ int main() {
         while (window.pollEvent(event)) {
 
             if (event.type == sf::Event::Resized) {
-                sf::FloatRect visibleArea(0, 0, event.size.width, event.size.height);
-                window.setView(sf::View(visibleArea)); // TODO: this should be done by the graphics handler
+                graphicsHandler.handleResizeEvent(event.size.width, event.size.height);
                 graphicsHandler.updateScaleFactorAndCardSize();
                 graphicsHandler.updateBackgroundSprite();
                 graphicsHandler.updateHandSprites(game);

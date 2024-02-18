@@ -406,6 +406,11 @@ bool GraphicsHandler::handleCardSelection(int& selectedCardIndex) {
     return cardClicked;
 }
 
+void GraphicsHandler::handleResizeEvent(float newWindowWidth, float newWindowHeight) {
+    sf::FloatRect visibleArea(0, 0, newWindowWidth, newWindowHeight);
+    window.setView(sf::View(visibleArea));
+}
+
 const std::vector<sf::Sprite>& GraphicsHandler::getHandSprites() const {
     return handSprites;
 }
