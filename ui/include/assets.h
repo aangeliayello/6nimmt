@@ -5,9 +5,9 @@
 
 // Textures
 sf::Texture loadBackgroundTexture();
-sf::Texture loadCardsTexture();
+sf::Texture loadCardsTexture(int number);
 
-// Icon
+// IconP
 sf::Image loadIcon();
 
 // Fonts

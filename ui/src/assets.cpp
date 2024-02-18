@@ -10,9 +10,12 @@ sf::Texture loadBackgroundTexture(){
     return backgroundTexture;
 }
 
-sf::Texture loadCardsTexture(){
+sf::Texture loadCardsTexture(int number){
+    int posCol = (number - 1) % 10;
+    int posRow = (number - 1)/10;
+    
     sf::Texture cardsTexture;
-    if (!cardsTexture.loadFromFile(BASE_DIR + "assets/cards.jpg")) {
+    if (!cardsTexture.loadFromFile(BASE_DIR + "assets/cards.jpg", sf::IntRect(132*posCol, 204*posRow, 132, 204))) {
         throw std::runtime_error("Failed to load cards texture");
     }
     return cardsTexture;
